@@ -1,0 +1,1544 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THE BEST DIGITAL | Juegos Digitales PS4 & PS5</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Montserrat', 'sans-serif'],
+          },
+          colors: {
+            fondo: '#08080a',
+            panel: '#101014',
+            panel2: '#17171d',
+            linea: '#24242c',
+            lineaFuerte: '#34343e',
+            rojo: '#dc0b1c',
+            rojoVivo: '#ff2e3e',
+            rojoOscuro: '#a30813',
+            verdeGeek: '#00b839',
+            verdeVivo: '#17d452',
+            wa: '#4dc247',
+            texto: '#f2f2f5',
+            textoSuave: '#c3c3cd',
+            muted: '#92929f',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      --fondo: #08080a;
+      --panel: #101014;
+      --panel-2: #17171d;
+      --linea: #24242c;
+      --linea-fuerte: #34343e;
+      --rojo: #dc0b1c;
+      --rojo-vivo: #ff2e3e;
+      --verde-geek: #00b839;
+      --verde-vivo: #17d452;
+      --wa: #4dc247;
+    }
+
+    body {
+      background-color: var(--fondo);
+      color: #f2f2f5;
+      font-family: 'Montserrat', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* Texto outline estilo The Best */
+    .text-stroke-red {
+      -webkit-text-stroke: 2px #dc0b1c;
+      color: transparent;
+    }
+    .text-stroke-green {
+      -webkit-text-stroke: 2px #00b839;
+      color: transparent;
+    }
+    .text-stroke-blue {
+      -webkit-text-stroke: 2px #2563eb;
+      color: transparent;
+    }
+    @media (max-width: 640px) {
+      .text-stroke-red, .text-stroke-green, .text-stroke-blue {
+        -webkit-text-stroke-width: 1.5px;
+      }
+    }
+
+    /* Corte biselado característico en carátulas y botones */
+    .corte-foto {
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%);
+    }
+    .corte-btn {
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+    }
+
+    /* Hover gamer de tarjetas */
+    .game-card {
+      background-color: var(--panel);
+      border: 1px solid var(--linea);
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .game-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--rojo);
+      box-shadow: 0 14px 28px -8px rgba(220, 11, 28, 0.28);
+    }
+
+    .cat-card {
+      background-color: var(--panel);
+      border: 1px solid var(--linea);
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .cat-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--rojo);
+      box-shadow: 0 12px 24px -8px rgba(220, 11, 28, 0.25);
+    }
+
+    /* Prefijo de título con barra roja vertical */
+    .section-heading {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .section-heading::before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 1.5em;
+      background-color: var(--rojo);
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    /* Glow ambiental del Hero */
+    .hero-glow-red {
+      background: radial-gradient(ellipse 60% 70% at 20% 45%, rgba(220, 11, 28, 0.18), transparent 70%),
+                  radial-gradient(ellipse 45% 60% at 78% 55%, rgba(220, 11, 28, 0.12), transparent 65%);
+    }
+    .hero-glow-green {
+      background: radial-gradient(ellipse 60% 70% at 20% 45%, rgba(0, 184, 57, 0.16), transparent 70%),
+                  radial-gradient(ellipse 45% 60% at 78% 55%, rgba(0, 184, 57, 0.10), transparent 65%);
+    }
+    .hero-glow-blue {
+      background: radial-gradient(ellipse 60% 70% at 20% 45%, rgba(37, 99, 235, 0.18), transparent 70%),
+                  radial-gradient(ellipse 45% 60% at 78% 55%, rgba(220, 11, 28, 0.10), transparent 65%);
+    }
+
+    /* Scrollbar sutil */
+    ::-webkit-scrollbar {
+      width: 7px;
+      height: 7px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #08080a;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #24242c;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #dc0b1c;
+    }
+
+    .line-clamp-2 {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* Pulso botón WhatsApp flotante */
+    @keyframes waPulse {
+      0% { box-shadow: 0 0 0 0 rgba(77, 194, 71, 0.55); }
+      70% { box-shadow: 0 0 0 14px rgba(77, 194, 71, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(77, 194, 71, 0); }
+    }
+    .wa-float {
+      animation: waPulse 2.4s infinite;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-rojo selection:text-white">
+
+  <!-- 1. TOP ANNOUNCEMENT BAR (Rojo sólido estilo The Best) -->
+  <div class="bg-rojo text-white text-[12px] sm:text-[13px] font-semibold">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex items-center justify-between gap-4">
+      <div class="flex items-center gap-2 truncate">
+        <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+        </svg>
+        <span class="truncate">Entrega digital en el día · Precios actualizados en vivo · PS4 &amp; PS5</span>
+      </div>
+      <div class="hidden sm:flex items-center gap-5 text-[11px] font-bold tracking-wider uppercase shrink-0">
+        <a href="#como-funciona" class="hover:text-white/80 transition">Cómo funciona</a>
+        <a href="#catalogo" onclick="applyQuickFilter('OFERTAS')" class="hover:text-white/80 transition">Ofertas</a>
+        <a id="topWaLink" href="#" target="_blank" class="hover:text-white/80 transition">Contacto</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. MAIN STICKY HEADER -->
+  <header class="sticky top-0 z-40 bg-fondo/95 backdrop-blur-md border-b border-linea">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between gap-3 sm:gap-6">
+      
+      <!-- Logo Estilo Gamer Heráldico -->
+      <a href="#" onclick="resetAllFilters()" class="flex items-center gap-2.5 shrink-0 group">
+        <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-rojo via-rojoOscuro to-black border border-rojo/60 flex items-center justify-center shadow-lg shadow-rojo/25 group-hover:scale-105 transition">
+          <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M21 6H3a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2zm-10 7H8v3H6v-3H3v-2h3V8h2v3h3v2zm4.5 2a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm4-3a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+          </svg>
+        </div>
+        <div class="leading-none">
+          <div class="flex items-baseline gap-1">
+            <span class="text-[10px] font-extrabold italic uppercase tracking-widest text-rojo block">DIGITAL</span>
+          </div>
+          <span class="text-xl sm:text-2xl font-black italic uppercase tracking-tight text-white group-hover:text-rojoVivo transition">
+            GAME<span class="text-rojo">STORE</span>
+          </span>
+          <span class="block text-[9px] font-bold tracking-[0.18em] text-muted uppercase mt-0.5">Juegos Digitales Originales</span>
+        </div>
+      </a>
+
+      <!-- Barra de Búsqueda Centrada con Autocomplete en vivo -->
+      <div class="flex-1 max-w-xl relative" id="searchWrapper">
+        <div class="flex items-center bg-panel2 border border-linea focus-within:border-rojo rounded-xl px-3.5 py-2.5 transition">
+          <svg class="w-4 h-4 text-muted mr-2.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+          <input id="searchInput" type="text" autocomplete="off"
+                 placeholder="Buscar juegos de PS4, PS5 (ej. GTA, FC27, Spider-Man)..."
+                 class="w-full bg-transparent text-xs sm:text-sm text-texto placeholder-muted focus:outline-none font-medium">
+          <button id="clearSearchBtn" type="button" class="hidden text-muted hover:text-white text-xs font-bold pl-2 transition">✕</button>
+        </div>
+
+        <!-- Dropdown Autocomplete en vivo -->
+        <div id="autocompleteBox" class="hidden absolute left-0 right-0 top-[calc(100%+6px)] bg-panel border border-lineaFuerte rounded-xl shadow-2xl shadow-black/80 overflow-hidden z-50">
+          <div id="autocompleteList" class="divide-y divide-linea max-h-80 overflow-y-auto"></div>
+          <button id="autocompleteViewAll" type="button" class="w-full py-2.5 px-4 bg-panel2 hover:bg-rojo text-center text-xs font-extrabold uppercase tracking-wider text-texto transition">
+            Ver todos los resultados →
+          </button>
+        </div>
+      </div>
+
+      <!-- Botón Carrito (Abre Drawer) -->
+      <button id="openCartBtn" type="button" aria-label="Abrir carrito"
+              class="relative w-11 h-11 rounded-xl bg-panel2 border border-linea hover:border-rojo flex items-center justify-center text-texto hover:text-white transition shrink-0">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+        </svg>
+        <span id="cartBadge" class="hidden absolute -top-1.5 -right-1.5 min-w-[20px] h-5 px-1 rounded-full bg-rojo text-white text-[10px] font-black flex items-center justify-center shadow-md">0</span>
+      </button>
+    </div>
+
+    <!-- 3. SUB-NAVBAR DE CATEGORÍAS -->
+    <nav class="border-t border-linea bg-fondo">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center gap-5 sm:gap-7 overflow-x-auto py-2.5 text-[11px] sm:text-[12px] font-extrabold uppercase tracking-wider whitespace-nowrap">
+          <button data-nav="ALL" class="nav-link text-white border-b-2 border-rojo pb-1 transition">Catálogo</button>
+          <button data-nav="PS5" class="nav-link text-textoSuave hover:text-white pb-1 border-b-2 border-transparent transition">PlayStation 5</button>
+          <button data-nav="PS4" class="nav-link text-textoSuave hover:text-white pb-1 border-b-2 border-transparent transition">PlayStation 4</button>
+          <button data-nav="OFERTAS" class="nav-link text-rojoVivo hover:text-white pb-1 border-b-2 border-transparent transition">🔥 Ofertas</button>
+          <button data-nav="PREVENTAS" class="nav-link text-textoSuave hover:text-white pb-1 border-b-2 border-transparent transition">Preventas</button>
+          <a href="#ofertas-destacadas" class="text-textoSuave hover:text-white pb-1 border-b-2 border-transparent transition">Más Buscados</a>
+          <a href="#como-funciona" class="text-verdeVivo hover:text-white pb-1 border-b-2 border-transparent transition">Primaria vs Secundaria</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- 4. HERO SECTION SLIDER (Estilo The Best) -->
+  <section id="heroSection" class="relative border-b border-linea hero-glow-red transition-all duration-500 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 lg:py-16">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        
+        <!-- Lado Izquierdo: Copy + CTA + Métricas -->
+        <div class="lg:col-span-7 space-y-5">
+          <!-- Chip superior -->
+          <div id="heroChip" class="inline-flex items-center gap-2 px-3 py-1.5 rounded border border-rojo/50 bg-rojo/10 text-[11px] font-extrabold uppercase tracking-widest text-rojoVivo">
+            <span>⚡</span>
+            <span id="heroChipText">JUEGOS DIGITALES · STOCK EN VIVO</span>
+          </div>
+
+          <!-- Título Monumental Italic + Outline -->
+          <h1 class="text-4xl sm:text-5xl lg:text-[58px] font-black italic uppercase leading-[0.98] tracking-tight">
+            <span id="heroTitleLine1" class="block text-white">LOS MEJORES</span>
+            <span id="heroTitleLine2" class="block text-stroke-red">JUEGOS DIGITALES<span class="text-rojo" style="-webkit-text-stroke: 0;">.</span></span>
+          </h1>
+
+          <!-- Subtítulo -->
+          <p id="heroSubtitle" class="text-sm sm:text-base text-textoSuave max-w-xl leading-relaxed">
+            Catálogo completo de <strong class="text-white">PS4 y PS5 con precios actualizados al instante</strong>. Elegí cuenta Primaria o Secundaria y coordiná directo por WhatsApp.
+          </p>
+
+          <!-- Botones Dobles CTA -->
+          <div class="flex flex-wrap items-center gap-3.5 pt-1">
+            <a id="heroPrimaryBtn" href="#catalogo" onclick="applyQuickFilter('ALL')"
+               class="corte-btn inline-flex items-center gap-2.5 bg-rojo hover:bg-rojoVivo text-white text-xs sm:text-sm font-black uppercase tracking-wider px-6 py-3.5 shadow-lg shadow-rojo/30 transition active:scale-[0.98]">
+              <span>Ver Catálogo</span>
+              <span>→</span>
+            </a>
+            <a id="heroSecondaryBtn" href="#catalogo" onclick="applyQuickFilter('OFERTAS')"
+               class="inline-flex items-center gap-2 border border-verdeGeek hover:bg-verdeGeek/15 text-verdeVivo text-xs sm:text-sm font-extrabold uppercase tracking-wider px-6 py-3.5 rounded-md transition">
+              <span>🔥 Ver Ofertas</span>
+            </a>
+          </div>
+
+          <!-- Métricas de Confianza en vivo -->
+          <div class="flex flex-wrap items-center gap-7 sm:gap-10 pt-4 border-t border-linea/70 max-w-xl">
+            <div>
+              <div id="metricTotalGames" class="text-2xl sm:text-3xl font-black italic text-white leading-none">...</div>
+              <div class="text-[10px] font-bold uppercase tracking-widest text-muted mt-1">Títulos PS4 &amp; PS5</div>
+            </div>
+            <div>
+              <div id="metricTotalOffers" class="text-2xl sm:text-3xl font-black italic text-rojoVivo leading-none">...</div>
+              <div class="text-[10px] font-bold uppercase tracking-widest text-muted mt-1">Ofertas Activas</div>
+            </div>
+            <div>
+              <div class="text-[10px] font-bold uppercase tracking-widest text-muted leading-none">ENTREGA DIGITAL</div>
+              <div class="text-lg sm:text-xl font-black italic text-white uppercase mt-1 leading-none">EN EL DÍA</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lado Derecho: 3 Tarjetas Flotantes con Tilt (alimentadas con juegos reales del Sheet) -->
+        <div class="lg:col-span-5 relative hidden sm:flex items-center justify-center min-h-[340px]" id="heroShowcase">
+          <!-- Tarjeta Izquierda Principal (Tilt -3deg) -->
+          <div id="heroCard0" onclick="heroCardClick(0)" class="cursor-pointer w-48 lg:w-52 bg-white text-fondo rounded-2xl p-3 shadow-2xl shadow-black/80 transform -rotate-3 hover:rotate-0 hover:scale-105 transition duration-300 z-20 border-2 border-white">
+            <div class="bg-[#00439c] text-white text-[10px] font-black italic tracking-widest px-2.5 py-1 rounded-t-lg flex items-center justify-between">
+              <span>PS5</span><span>DIGITAL</span>
+            </div>
+            <div class="h-36 bg-gradient-to-br from-[#0c1222] via-[#1a2238] to-rojoOscuro rounded-b-lg p-3 flex flex-col justify-between text-white relative overflow-hidden">
+              <span class="text-[9px] font-black uppercase bg-rojo px-2 py-0.5 rounded w-fit">DESTACADO</span>
+              <div class="font-black italic uppercase text-sm leading-tight line-clamp-2 hero-c-title">CARGANDO...</div>
+            </div>
+            <div class="mt-2.5 flex items-center justify-between">
+              <span class="text-[10px] font-bold text-gray-500 uppercase">Desde</span>
+              <span class="text-base font-black text-fondo hero-c-price">$---</span>
+            </div>
+          </div>
+
+          <!-- Columna Derecha (2 tarjetas apiladas con tilt) -->
+          <div class="flex flex-col gap-4 -ml-5 z-10">
+            <div id="heroCard1" onclick="heroCardClick(1)" class="cursor-pointer w-44 lg:w-48 bg-white text-fondo rounded-2xl p-2.5 shadow-2xl shadow-black/80 transform rotate-3 hover:rotate-0 hover:scale-105 transition duration-300 border-2 border-white">
+              <div class="bg-fondo text-white text-[9px] font-black italic tracking-widest px-2 py-1 rounded-t-lg flex justify-between">
+                <span class="hero-c-console">PS5</span><span class="text-rojoVivo">🔥 OFERTA</span>
+              </div>
+              <div class="h-24 bg-gradient-to-br from-[#14141c] to-[#2c1116] rounded-b-lg p-2.5 flex items-end text-white">
+                <div class="font-black italic uppercase text-xs leading-tight line-clamp-2 hero-c-title">CARGANDO...</div>
+              </div>
+              <div class="mt-2 flex items-center justify-between">
+                <span class="text-[9px] font-bold text-gray-500 uppercase">Secundaria</span>
+                <span class="text-sm font-black text-rojo hero-c-price">$---</span>
+              </div>
+            </div>
+
+            <div id="heroCard2" onclick="heroCardClick(2)" class="cursor-pointer w-44 lg:w-48 bg-white text-fondo rounded-2xl p-2.5 shadow-2xl shadow-black/80 transform -rotate-2 hover:rotate-0 hover:scale-105 transition duration-300 border-2 border-verdeGeek">
+              <div class="bg-verdeGeek text-white text-[9px] font-black italic tracking-widest px-2 py-1 rounded-t-lg flex justify-between">
+                <span class="hero-c-console">PS4</span><span>TOP VENTAS</span>
+              </div>
+              <div class="h-24 bg-gradient-to-br from-[#0f1d16] to-[#122b20] rounded-b-lg p-2.5 flex items-end text-white">
+                <div class="font-black italic uppercase text-xs leading-tight line-clamp-2 hero-c-title">CARGANDO...</div>
+              </div>
+              <div class="mt-2 flex items-center justify-between">
+                <span class="text-[9px] font-bold text-gray-500 uppercase">Desde</span>
+                <span class="text-sm font-black text-fondo hero-c-price">$---</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controles del Slider (Estilo The Best) -->
+      <div class="flex items-center justify-center gap-3 mt-8">
+        <button type="button" onclick="prevSlide()" aria-label="Anterior" class="w-8 h-8 rounded-full bg-panel2 border border-linea hover:border-rojo text-textoSuave hover:text-white flex items-center justify-center transition">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+        </button>
+        <div class="flex items-center gap-2" id="heroDots">
+          <button onclick="goToSlide(0)" class="hero-dot h-1 w-8 rounded-full bg-rojo transition-all"></button>
+          <button onclick="goToSlide(1)" class="hero-dot h-1 w-6 rounded-full bg-lineaFuerte hover:bg-muted transition-all"></button>
+          <button onclick="goToSlide(2)" class="hero-dot h-1 w-6 rounded-full bg-lineaFuerte hover:bg-muted transition-all"></button>
+        </div>
+        <button type="button" onclick="nextSlide()" aria-label="Siguiente" class="w-8 h-8 rounded-full bg-panel2 border border-linea hover:border-rojo text-textoSuave hover:text-white flex items-center justify-center transition">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. ELEGÍ TU TERRENO (Quick Category Cards) -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-4 w-full">
+    <div class="flex items-center justify-between mb-5">
+      <h2 class="section-heading text-lg sm:text-xl font-black italic uppercase tracking-wide text-white">
+        Elegí tu terreno
+      </h2>
+      <span class="text-[11px] font-bold uppercase tracking-widest text-muted hidden sm:inline">Filtrá por consola o promo</span>
+    </div>
+
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+      <!-- PS5 -->
+      <button type="button" onclick="applyQuickFilter('PS5')" class="cat-card rounded-xl overflow-hidden text-left group">
+        <div class="h-24 sm:h-28 bg-white corte-foto flex items-center justify-center relative p-4 overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-white"></div>
+          <div class="relative z-10 text-center">
+            <span class="text-3xl sm:text-4xl font-black italic tracking-tighter text-[#003087] group-hover:scale-110 inline-block transition">PS5</span>
+            <span class="block text-[9px] font-extrabold uppercase tracking-[0.25em] text-gray-500">NEXT-GEN</span>
+          </div>
+        </div>
+        <div class="p-3.5">
+          <div class="font-black italic uppercase text-sm text-white group-hover:text-rojoVivo transition">PlayStation 5</div>
+          <div id="countPS5" class="text-[11px] font-bold text-muted uppercase mt-0.5">Cargando...</div>
+        </div>
+      </button>
+
+      <!-- PS4 -->
+      <button type="button" onclick="applyQuickFilter('PS4')" class="cat-card rounded-xl overflow-hidden text-left group">
+        <div class="h-24 sm:h-28 bg-white corte-foto flex items-center justify-center relative p-4 overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-br from-sky-50 to-white"></div>
+          <div class="relative z-10 text-center">
+            <span class="text-3xl sm:text-4xl font-black italic tracking-tighter text-[#0070d1] group-hover:scale-110 inline-block transition">PS4</span>
+            <span class="block text-[9px] font-extrabold uppercase tracking-[0.25em] text-gray-500">CLÁSICOS &amp; HITS</span>
+          </div>
+        </div>
+        <div class="p-3.5">
+          <div class="font-black italic uppercase text-sm text-white group-hover:text-rojoVivo transition">PlayStation 4</div>
+          <div id="countPS4" class="text-[11px] font-bold text-muted uppercase mt-0.5">Cargando...</div>
+        </div>
+      </button>
+
+      <!-- Ofertas -->
+      <button type="button" onclick="applyQuickFilter('OFERTAS')" class="cat-card rounded-xl overflow-hidden text-left group">
+        <div class="h-24 sm:h-28 bg-white corte-foto flex items-center justify-center relative p-4 overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-br from-red-50 to-white"></div>
+          <div class="relative z-10 text-center">
+            <span class="text-2xl sm:text-3xl font-black italic tracking-tight text-rojo group-hover:scale-110 inline-block transition">🔥 OFERTAS</span>
+            <span class="block text-[9px] font-extrabold uppercase tracking-[0.2em] text-gray-500">TIEMPO LIMITADO</span>
+          </div>
+        </div>
+        <div class="p-3.5">
+          <div class="font-black italic uppercase text-sm text-white group-hover:text-rojoVivo transition">Promociones</div>
+          <div id="countOFERTAS" class="text-[11px] font-bold text-rojoVivo uppercase mt-0.5">Cargando...</div>
+        </div>
+      </button>
+
+      <!-- Preventas -->
+      <button type="button" onclick="applyQuickFilter('PREVENTAS')" class="cat-card rounded-xl overflow-hidden text-left group">
+        <div class="h-24 sm:h-28 bg-white corte-foto flex items-center justify-center relative p-4 overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-br from-emerald-50 to-white"></div>
+          <div class="relative z-10 text-center">
+            <span class="text-2xl sm:text-3xl font-black italic tracking-tight text-verdeGeek group-hover:scale-110 inline-block transition">⚡ ESTRENOS</span>
+            <span class="block text-[9px] font-extrabold uppercase tracking-[0.2em] text-gray-500">PREVENTAS</span>
+          </div>
+        </div>
+        <div class="p-3.5">
+          <div class="font-black italic uppercase text-sm text-white group-hover:text-verdeVivo transition">Lanzamientos</div>
+          <div id="countPREVENTAS" class="text-[11px] font-bold text-verdeVivo uppercase mt-0.5">Cargando...</div>
+        </div>
+      </button>
+    </div>
+  </section>
+
+  <!-- 6. OFERTAS DESTACADAS (Strip rápido) -->
+  <section id="ofertas-destacadas" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-2 w-full">
+    <div class="flex items-center justify-between mb-5 flex-wrap gap-2">
+      <h2 class="section-heading text-lg sm:text-xl font-black italic uppercase tracking-wide text-white">
+        Ofertas destacadas
+      </h2>
+      <button type="button" onclick="applyQuickFilter('OFERTAS')" class="text-xs font-extrabold uppercase tracking-wider text-rojoVivo hover:text-white transition">
+        Ver todas las ofertas →
+      </button>
+    </div>
+    <div id="featuredOffersGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <!-- Se llena con 4 ofertas destacadas reales del sheet -->
+      <div class="bg-panel border border-linea rounded-xl h-80 animate-pulse"></div>
+      <div class="bg-panel border border-linea rounded-xl h-80 animate-pulse"></div>
+      <div class="bg-panel border border-linea rounded-xl h-80 animate-pulse"></div>
+      <div class="bg-panel border border-linea rounded-xl h-80 animate-pulse"></div>
+    </div>
+  </section>
+
+  <!-- 7. CATÁLOGO COMPLETO CON FILTROS Y ORDENAMIENTO -->
+  <main id="catalogo" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-14 w-full flex-1 scroll-mt-28">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+      <div>
+        <h2 class="section-heading text-lg sm:text-2xl font-black italic uppercase tracking-wide text-white">
+          Catálogo Completo
+        </h2>
+        <p id="gamesCounter" class="text-xs font-semibold text-muted mt-1 ml-4">Sincronizando planilla en vivo...</p>
+      </div>
+
+      <!-- Controles: Pills + Ordenar -->
+      <div class="flex flex-wrap items-center gap-2.5">
+        <div class="flex items-center gap-1.5 flex-wrap" id="consoleFilters">
+          <button data-console="ALL" class="console-btn px-3.5 py-2 rounded-lg text-[11px] font-extrabold uppercase tracking-wider bg-rojo text-white transition">Todos</button>
+          <button data-console="PS5" class="console-btn px-3.5 py-2 rounded-lg text-[11px] font-extrabold uppercase tracking-wider bg-panel border border-linea text-textoSuave hover:border-rojo hover:text-white transition">PS5</button>
+          <button data-console="PS4" class="console-btn px-3.5 py-2 rounded-lg text-[11px] font-extrabold uppercase tracking-wider bg-panel border border-linea text-textoSuave hover:border-rojo hover:text-white transition">PS4</button>
+          <button data-console="OFERTAS" class="console-btn px-3.5 py-2 rounded-lg text-[11px] font-extrabold uppercase tracking-wider bg-panel border border-linea text-rojoVivo hover:border-rojo transition">🔥 Ofertas</button>
+          <button data-console="PREVENTAS" class="console-btn px-3.5 py-2 rounded-lg text-[11px] font-extrabold uppercase tracking-wider bg-panel border border-linea text-verdeVivo hover:border-verdeGeek transition">⚡ Preventas</button>
+        </div>
+
+        <select id="sortSelect" aria-label="Ordenar por"
+                class="bg-panel2 border border-linea focus:border-rojo rounded-lg px-3 py-2 text-[11px] font-bold uppercase tracking-wider text-texto focus:outline-none">
+          <option value="DEFAULT">Orden: Destacados</option>
+          <option value="PRICE_ASC">Precio: Menor a Mayor</option>
+          <option value="PRICE_DESC">Precio: Mayor a Menor</option>
+          <option value="NAME_ASC">Nombre: A - Z</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Skeleton Loader -->
+    <div id="loader" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+      <div class="bg-panel border border-linea rounded-xl h-[360px] animate-pulse"></div>
+      <div class="bg-panel border border-linea rounded-xl h-[360px] animate-pulse"></div>
+      <div class="bg-panel border border-linea rounded-xl h-[360px] animate-pulse"></div>
+      <div class="bg-panel border border-linea rounded-xl h-[360px] animate-pulse"></div>
+      <div class="bg-panel border border-linea rounded-xl h-[360px] animate-pulse"></div>
+      <div class="bg-panel border border-linea rounded-xl h-[360px] animate-pulse"></div>
+      <div class="bg-panel border border-linea rounded-xl h-[360px] animate-pulse"></div>
+      <div class="bg-panel border border-linea rounded-xl h-[360px] animate-pulse"></div>
+    </div>
+
+    <!-- Error State -->
+    <div id="errorMessage" class="hidden text-center py-16 bg-panel border border-linea rounded-2xl">
+      <div class="text-4xl">⚠️</div>
+      <h3 class="text-lg font-extrabold uppercase text-white mt-3">No pudimos conectar con el catálogo</h3>
+      <p id="errorDetail" class="text-xs text-muted mt-1 max-w-md mx-auto">Verificá tu conexión a internet e intentá nuevamente.</p>
+      <button onclick="fetchSheetData()" class="corte-btn mt-5 px-6 py-2.5 bg-rojo hover:bg-rojoVivo text-white text-xs font-extrabold uppercase tracking-wider">Reintentar</button>
+    </div>
+
+    <!-- Empty Search State -->
+    <div id="emptyMessage" class="hidden text-center py-16 bg-panel border border-linea rounded-2xl">
+      <div class="text-4xl">🎮</div>
+      <h3 class="text-base font-extrabold uppercase text-white mt-3">No encontramos juegos con ese filtro</h3>
+      <p class="text-xs text-muted mt-1">Probá borrando la búsqueda o cambiando de consola.</p>
+      <button onclick="resetAllFilters()" class="mt-4 px-5 py-2 rounded-lg bg-panel2 border border-linea hover:border-rojo text-xs font-bold uppercase text-white transition">Ver todo el catálogo</button>
+    </div>
+
+    <!-- Grid Principal -->
+    <div id="gamesGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5"></div>
+
+    <!-- Botón Cargar Más (Paginación Fluida para los 773 títulos) -->
+    <div id="loadMoreContainer" class="hidden text-center mt-10">
+      <button id="loadMoreBtn" type="button" onclick="loadMoreGames()"
+              class="corte-btn inline-flex items-center gap-2 bg-panel2 hover:bg-rojo border border-lineaFuerte hover:border-rojo text-white text-xs font-black uppercase tracking-widest px-8 py-3.5 transition">
+        <span>Cargar más juegos</span>
+        <span id="loadMoreCount" class="text-muted"></span>
+      </button>
+    </div>
+  </main>
+
+  <!-- 8. SECCIÓN EXPLICATIVA: PRIMARIA VS SECUNDARIA -->
+  <section id="como-funciona" class="border-t border-linea bg-panel/60 py-12 scroll-mt-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="section-heading text-lg sm:text-xl font-black italic uppercase tracking-wide text-white mb-6">
+        ¿Primaria o Secundaria? Cómo funciona
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div class="bg-panel border border-linea rounded-xl p-6 hover:border-rojo/60 transition">
+          <div class="flex items-center justify-between mb-3">
+            <span class="px-3 py-1 rounded bg-rojo/15 border border-rojo/40 text-rojoVivo text-xs font-black uppercase tracking-wider">Cuenta Primaria</span>
+            <span class="text-xs font-bold text-verdeVivo">★ LA MÁS ELEGIDA</span>
+          </div>
+          <ul class="space-y-2 text-xs sm:text-sm text-textoSuave">
+            <li>• Jugás siempre desde <strong class="text-white">tu propio usuario personal</strong> de PlayStation.</li>
+            <li>• Todos los trofeos y partidas guardadas quedan en tu perfil.</li>
+            <li>• Podés jugar <strong class="text-white">con o sin conexión a internet</strong>.</li>
+          </ul>
+        </div>
+        <div class="bg-panel border border-linea rounded-xl p-6 hover:border-verdeGeek/60 transition">
+          <div class="flex items-center justify-between mb-3">
+            <span class="px-3 py-1 rounded bg-verdeGeek/15 border border-verdeGeek/40 text-verdeVivo text-xs font-black uppercase tracking-wider">Cuenta Secundaria</span>
+            <span class="text-xs font-bold text-muted">💰 MÁS ECONÓMICA</span>
+          </div>
+          <ul class="space-y-2 text-xs sm:text-sm text-textoSuave">
+            <li>• El juego completo y original, pero a un <strong class="text-white">precio mucho menor</strong>.</li>
+            <li>• Jugás ingresando directamente desde el usuario que te enviamos.</li>
+            <li>• Requiere conexión a internet activa para verificar la licencia.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. FRANJA DE BENEFICIOS Y CONFIANZA (Trust Strip estilo The Best) -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
+    <div class="bg-panel border border-linea rounded-2xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-linea">
+      <div class="p-6 flex items-start gap-4">
+        <div class="w-10 h-10 rounded-lg bg-rojo/10 border border-rojo/30 flex items-center justify-center text-rojo shrink-0">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        </div>
+        <div>
+          <h3 class="text-xs font-black uppercase tracking-wider text-white">Entrega Inmediata</h3>
+          <p class="text-xs text-textoSuave mt-1 leading-relaxed">Coordinás por WhatsApp y recibís tu juego digital hoy mismo.</p>
+        </div>
+      </div>
+
+      <div class="p-6 flex items-start gap-4">
+        <div class="w-10 h-10 rounded-lg bg-rojo/10 border border-rojo/30 flex items-center justify-center text-rojo shrink-0">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
+        <div>
+          <h3 class="text-xs font-black uppercase tracking-wider text-white">100% Originales</h3>
+          <p class="text-xs text-textoSuave mt-1 leading-relaxed">Juegos oficiales descargados directo desde PlayStation Store.</p>
+        </div>
+      </div>
+
+      <div class="p-6 flex items-start gap-4">
+        <div class="w-10 h-10 rounded-lg bg-rojo/10 border border-rojo/30 flex items-center justify-center text-rojo shrink-0">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
+        </div>
+        <div>
+          <h3 class="text-xs font-black uppercase tracking-wider text-white">Medios de Pago</h3>
+          <p class="text-xs text-textoSuave mt-1 leading-relaxed">Transferencia bancaria, Mercado Pago y efectivo.</p>
+        </div>
+      </div>
+
+      <div class="p-6 flex items-start gap-4">
+        <div class="w-10 h-10 rounded-lg bg-rojo/10 border border-rojo/30 flex items-center justify-center text-rojo shrink-0">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+        </div>
+        <div>
+          <h3 class="text-xs font-black uppercase tracking-wider text-white">Soporte Paso a Paso</h3>
+          <p class="text-xs text-textoSuave mt-1 leading-relaxed">Te guiamos en todo el proceso de descarga e instalación.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. FOOTER 4 COLUMNAS (Estilo The Best) -->
+  <footer class="bg-panel border-t border-linea text-xs text-textoSuave">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Columna 1: Marca -->
+      <div class="space-y-3">
+        <div class="text-xl font-black italic uppercase tracking-tight text-white">
+          GAME<span class="text-rojo">STORE</span>
+        </div>
+        <p class="text-xs text-muted leading-relaxed">
+          Venta de juegos digitales originales para PlayStation 4 y PlayStation 5. Precios sincronizados en vivo todos los días.
+        </p>
+        <div class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-verdeVivo">
+          <span class="w-2 h-2 rounded-full bg-verdeVivo animate-pulse"></span>
+          Catálogo conectado en tiempo real
+        </div>
+      </div>
+
+      <!-- Columna 2: Categorías -->
+      <div>
+        <h4 class="section-heading text-xs font-black uppercase tracking-wider text-white mb-4">Catálogo</h4>
+        <ul class="space-y-2.5">
+          <li><a href="#catalogo" onclick="applyQuickFilter('PS5')" class="hover:text-rojoVivo transition">Juegos PlayStation 5</a></li>
+          <li><a href="#catalogo" onclick="applyQuickFilter('PS4')" class="hover:text-rojoVivo transition">Juegos PlayStation 4</a></li>
+          <li><a href="#catalogo" onclick="applyQuickFilter('OFERTAS')" class="hover:text-rojoVivo transition">Ofertas por tiempo limitado</a></li>
+          <li><a href="#catalogo" onclick="applyQuickFilter('PREVENTAS')" class="hover:text-rojoVivo transition">Preventas y estrenos</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 3: Contacto & Pagos -->
+      <div>
+        <h4 class="section-heading text-xs font-black uppercase tracking-wider text-white mb-4">Contacto &amp; Pagos</h4>
+        <ul class="space-y-2.5">
+          <li><a id="footerWaLink" href="#" target="_blank" class="text-wa font-bold hover:underline">WhatsApp Atención Directa</a></li>
+          <li class="text-muted">Horarios: Lunes a Sábados · 10 a 21 hs</li>
+        </ul>
+        <div class="flex flex-wrap gap-1.5 mt-4">
+          <span class="px-2.5 py-1 rounded bg-panel2 border border-linea text-[10px] font-bold uppercase text-white">Transferencia</span>
+          <span class="px-2.5 py-1 rounded bg-panel2 border border-linea text-[10px] font-bold uppercase text-white">Mercado Pago</span>
+          <span class="px-2.5 py-1 rounded bg-panel2 border border-linea text-[10px] font-bold uppercase text-white">Efectivo</span>
+        </div>
+      </div>
+
+      <!-- Columna 4: Ayuda -->
+      <div>
+        <h4 class="section-heading text-xs font-black uppercase tracking-wider text-white mb-4">Ayuda</h4>
+        <ul class="space-y-2.5">
+          <li><a href="#como-funciona" class="hover:text-rojoVivo transition">Diferencia Primaria y Secundaria</a></li>
+          <li><a href="#catalogo" class="hover:text-rojoVivo transition">Cómo comprar paso a paso</a></li>
+          <li><button type="button" onclick="openCartDrawer()" class="hover:text-rojoVivo transition">Ver mi pedido actual</button></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-linea py-4">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-muted">
+        <span>© 2026 Digital GameStore · Todos los derechos reservados.</span>
+        <span>Demo interactiva sincronizada con Google Sheets</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 11. SLIDE-OVER CART DRAWER (Estilo The Best + Cierre por WhatsApp) -->
+  <div id="cartOverlay" onclick="closeCartDrawer()" class="fixed inset-0 bg-black/75 backdrop-blur-xs z-50 hidden opacity-0 transition-opacity duration-300"></div>
+  <aside id="cartDrawer" class="fixed top-0 right-0 h-full w-full max-w-md bg-panel border-l border-linea z-50 transform translate-x-full transition-transform duration-300 flex flex-col shadow-2xl">
+    <!-- Header Drawer -->
+    <div class="p-5 border-b border-linea flex items-center justify-between bg-fondo">
+      <h3 class="section-heading text-sm font-black italic uppercase tracking-wider text-white">
+        Tu Pedido (<span id="drawerCount">0</span>)
+      </h3>
+      <button type="button" onclick="closeCartDrawer()" class="w-8 h-8 rounded-lg bg-panel2 border border-linea hover:border-rojo text-textoSuave hover:text-white flex items-center justify-center transition">✕</button>
+    </div>
+
+    <!-- Items -->
+    <div id="cartItemsList" class="flex-1 overflow-y-auto p-5 space-y-3">
+      <!-- Renderizado por JS -->
+    </div>
+
+    <!-- Footer Drawer -->
+    <div class="p-5 border-t border-linea bg-fondo space-y-4">
+      <div class="flex items-center justify-between">
+        <span class="text-xs font-bold uppercase tracking-wider text-muted">Total estimado</span>
+        <span id="cartTotal" class="text-2xl font-black text-white">$0</span>
+      </div>
+      <a id="cartCheckoutWa" href="#" target="_blank"
+         class="corte-btn w-full flex items-center justify-center gap-2.5 bg-rojo hover:bg-rojoVivo text-white py-3.5 px-4 text-xs font-black uppercase tracking-wider shadow-lg shadow-rojo/30 transition">
+        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654z"/></svg>
+        <span>Pedir todo por WhatsApp →</span>
+      </a>
+      <button type="button" onclick="clearCart()" class="w-full text-[11px] font-bold uppercase tracking-wider text-muted hover:text-rojoVivo transition">
+        Vaciar pedido
+      </button>
+    </div>
+  </aside>
+
+  <!-- 12. BOTÓN FLOTANTE DE WHATSAPP -->
+  <a id="floatingWaBtn" href="#" target="_blank" aria-label="Consultar por WhatsApp"
+     class="wa-float fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-wa hover:bg-[#3eb338] text-white flex items-center justify-center shadow-2xl transition hover:scale-110">
+    <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+    </svg>
+  </a>
+
+  <!-- Toast Feedback -->
+  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-panel border border-rojo text-white px-5 py-3 rounded-xl shadow-2xl shadow-black text-xs font-extrabold uppercase tracking-wider flex items-center gap-2.5 opacity-0 pointer-events-none transition-all duration-300 translate-y-4">
+    <span class="text-verdeVivo">✓</span>
+    <span id="toastText">Agregado al pedido</span>
+  </div>
+
+  <!-- LÓGICA DE DATOS, CARRITO, SLIDER Y GOOGLE SHEETS -->
+  <script>
+    // =========================================================================
+    // CONFIGURACIÓN PRINCIPAL (Cambiá el teléfono por el de tu cliente)
+    // =========================================================================
+    const SHEET_ID = '1R3u-VPzH_dyWg7eNvIbkZv2dlczr8iT8';
+    const GID = '973457218';
+    const WHATSAPP_PHONE = '5491100000000'; // Ej: 5493415551234 (sin + ni espacios)
+    const SHEET_CSV_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&gid=${GID}`;
+    const PAGE_SIZE = 24;
+
+    // Estado de la App
+    let allGames = [];
+    let filteredGames = [];
+    let visibleCount = PAGE_SIZE;
+    let currentFilter = 'ALL';
+    let currentSort = 'DEFAULT';
+    let searchQuery = '';
+    let cart = [];
+    let heroShowcaseGames = [];
+    let currentSlide = 0;
+    let slideInterval = null;
+
+    // Slides del Hero (Inspirados en el slider de The Best)
+    const HERO_SLIDES = [
+      {
+        glowClass: 'hero-glow-red',
+        chip: 'JUEGOS DIGITALES · STOCK EN VIVO',
+        chipStyle: 'border-rojo/50 bg-rojo/10 text-rojoVivo',
+        line1: 'LOS MEJORES',
+        line2: 'JUEGOS DIGITALES',
+        strokeClass: 'text-stroke-red',
+        dotColor: 'text-rojo',
+        subtitle: 'Catálogo completo de <strong class="text-white">PS4 y PS5 con precios actualizados al instante</strong>. Elegí cuenta Primaria o Secundaria y coordiná directo por WhatsApp.'
+      },
+      {
+        glowClass: 'hero-glow-blue',
+        chip: 'NEXT-GEN · PLAYSTATION 5',
+        chipStyle: 'border-blue-500/50 bg-blue-500/10 text-blue-400',
+        line1: 'ESTRENOS Y',
+        line2: 'PREVENTAS PS5',
+        strokeClass: 'text-stroke-blue',
+        dotColor: 'text-blue-500',
+        subtitle: 'Reservá los lanzamientos más esperados del año en <strong class="text-white">versión Primaria o Secundaria</strong> con garantía y entrega en el día.'
+      },
+      {
+        glowClass: 'hero-glow-green',
+        chip: 'PROMOS ACTIVAS · TIEMPO LIMITADO',
+        chipStyle: 'border-verdeGeek/50 bg-verdeGeek/10 text-verdeVivo',
+        line1: 'OFERTAS QUE',
+        line2: 'NO EXISTEN',
+        strokeClass: 'text-stroke-green',
+        dotColor: 'text-verdeGeek',
+        subtitle: 'Aprovechá más de <strong class="text-white">200 títulos en oferta especial</strong> para PS4 y PS5. Armá tu pedido en el carrito y consultá al instante.'
+      }
+    ];
+
+    // DOM refs
+    const gamesGrid = document.getElementById('gamesGrid');
+    const featuredOffersGrid = document.getElementById('featuredOffersGrid');
+    const loader = document.getElementById('loader');
+    const errorMessage = document.getElementById('errorMessage');
+    const emptyMessage = document.getElementById('emptyMessage');
+    const gamesCounter = document.getElementById('gamesCounter');
+    const loadMoreContainer = document.getElementById('loadMoreContainer');
+    const loadMoreCount = document.getElementById('loadMoreCount');
+    const searchInput = document.getElementById('searchInput');
+    const clearSearchBtn = document.getElementById('clearSearchBtn');
+    const autocompleteBox = document.getElementById('autocompleteBox');
+    const autocompleteList = document.getElementById('autocompleteList');
+    const autocompleteViewAll = document.getElementById('autocompleteViewAll');
+    const sortSelect = document.getElementById('sortSelect');
+
+    document.addEventListener('DOMContentLoaded', () => {
+      initGeneralWaLinks();
+      setupEvents();
+      startHeroSlider();
+      fetchSheetData();
+    });
+
+    function initGeneralWaLinks() {
+      const genericMsg = encodeURIComponent('¡Hola! Vi el catálogo web de juegos digitales y quería hacer una consulta.');
+      const waUrl = `https://wa.me/${WHATSAPP_PHONE}?text=${genericMsg}`;
+      document.getElementById('topWaLink').href = waUrl;
+      document.getElementById('footerWaLink').href = waUrl;
+      document.getElementById('floatingWaBtn').href = waUrl;
+    }
+
+    function setupEvents() {
+      // Search + Autocomplete
+      searchInput.addEventListener('input', (e) => {
+        searchQuery = e.target.value.trim().toLowerCase();
+        clearSearchBtn.classList.toggle('hidden', searchQuery === '');
+        visibleCount = PAGE_SIZE;
+        updateAutocomplete();
+        applyFiltersAndRender();
+      });
+
+      searchInput.addEventListener('focus', () => {
+        if (searchQuery.length >= 2) updateAutocomplete();
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!document.getElementById('searchWrapper').contains(e.target)) {
+          autocompleteBox.classList.add('hidden');
+        }
+      });
+
+      clearSearchBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        searchQuery = '';
+        clearSearchBtn.classList.add('hidden');
+        autocompleteBox.classList.add('hidden');
+        visibleCount = PAGE_SIZE;
+        applyFiltersAndRender();
+      });
+
+      autocompleteViewAll.addEventListener('click', () => {
+        autocompleteBox.classList.add('hidden');
+        document.getElementById('catalogo').scrollIntoView({ behavior: 'smooth' });
+      });
+
+      // Console filter buttons
+      document.querySelectorAll('.console-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          setFilter(btn.getAttribute('data-console'));
+        });
+      });
+
+      // Top sub-navbar filter buttons
+      document.querySelectorAll('.nav-link').forEach(btn => {
+        btn.addEventListener('click', () => {
+          applyQuickFilter(btn.getAttribute('data-nav'));
+        });
+      });
+
+      // Sort selector
+      sortSelect.addEventListener('change', (e) => {
+        currentSort = e.target.value;
+        visibleCount = PAGE_SIZE;
+        applyFiltersAndRender();
+      });
+
+      // Cart Drawer button
+      document.getElementById('openCartBtn').addEventListener('click', openCartDrawer);
+    }
+
+    // =========================================================================
+    // HERO SLIDER
+    // =========================================================================
+    function renderSlide(idx) {
+      currentSlide = idx;
+      const s = HERO_SLIDES[idx];
+      const heroSec = document.getElementById('heroSection');
+      heroSec.classList.remove('hero-glow-red', 'hero-glow-green', 'hero-glow-blue');
+      heroSec.classList.add(s.glowClass);
+
+      const chip = document.getElementById('heroChip');
+      chip.className = `inline-flex items-center gap-2 px-3 py-1.5 rounded border text-[11px] font-extrabold uppercase tracking-widest ${s.chipStyle}`;
+      document.getElementById('heroChipText').textContent = s.chip;
+
+      document.getElementById('heroTitleLine1').textContent = s.line1;
+      const line2 = document.getElementById('heroTitleLine2');
+      line2.className = `block ${s.strokeClass}`;
+      line2.innerHTML = `${s.line2}<span class="${s.dotColor}" style="-webkit-text-stroke: 0;">.</span>`;
+
+      document.getElementById('heroSubtitle').innerHTML = s.subtitle;
+
+      document.querySelectorAll('.hero-dot').forEach((d, i) => {
+        if (i === idx) {
+          d.className = 'hero-dot h-1 w-8 rounded-full bg-rojo transition-all';
+        } else {
+          d.className = 'hero-dot h-1 w-6 rounded-full bg-lineaFuerte hover:bg-muted transition-all';
+        }
+      });
+    }
+
+    function nextSlide() { renderSlide((currentSlide + 1) % HERO_SLIDES.length); }
+    function prevSlide() { renderSlide((currentSlide - 1 + HERO_SLIDES.length) % HERO_SLIDES.length); }
+    function goToSlide(idx) { renderSlide(idx); }
+    function startHeroSlider() {
+      if (slideInterval) clearInterval(slideInterval);
+      slideInterval = setInterval(nextSlide, 7000);
+    }
+
+    // =========================================================================
+    // GOOGLE SHEETS CSV PARSER & LOADER
+    // =========================================================================
+    function parseCSV(text) {
+      const lines = text.split(/\r\n|\n/);
+      const rows = [];
+      for (let line of lines) {
+        if (!line.trim()) continue;
+        const row = [];
+        let inQuotes = false;
+        let token = '';
+        for (let i = 0; i < line.length; i++) {
+          const ch = line[i];
+          if (ch === '"') {
+            if (inQuotes && line[i + 1] === '"') { token += '"'; i++; }
+            else { inQuotes = !inQuotes; }
+          } else if (ch === ',' && !inQuotes) {
+            row.push(token.trim());
+            token = '';
+          } else {
+            token += ch;
+          }
+        }
+        row.push(token.trim());
+        rows.push(row);
+      }
+      return rows;
+    }
+
+    async function fetchSheetData() {
+      loader.classList.remove('hidden');
+      gamesGrid.innerHTML = '';
+      errorMessage.classList.add('hidden');
+      emptyMessage.classList.add('hidden');
+
+      try {
+        const res = await fetch(SHEET_CSV_URL);
+        if (!res.ok) throw new Error('Error de conexión con Google Sheets');
+        const csvText = await res.text();
+        const rows = parseCSV(csvText);
+        processRows(rows);
+      } catch (err) {
+        console.error(err);
+        loader.classList.add('hidden');
+        errorMessage.classList.remove('hidden');
+        document.getElementById('errorDetail').textContent = err.message;
+        gamesCounter.textContent = 'Sin conexión con la planilla';
+      }
+    }
+
+    function processRows(rows) {
+      if (rows.length < 2) throw new Error('La planilla está vacía.');
+
+      const gamesMap = new Map();
+      let lastGameName = '';
+      let lastConsole = '';
+      let idSeq = 1;
+
+      for (let i = 1; i < rows.length; i++) {
+        const r = rows[i];
+        let gameName = (r[0] || '').trim();
+        let consoleName = (r[1] || '').trim().toUpperCase();
+        const accountType = (r[2] || '').trim().toUpperCase();
+        const priceStr = (r[3] || '').trim();
+        const observation = (r[4] || '').trim();
+        const imageUrl = (r[5] || '').trim(); // Soporte opcional si en el futuro agregan columna F de imagen
+
+        if (gameName) lastGameName = gameName;
+        else gameName = lastGameName;
+
+        if (consoleName) lastConsole = consoleName;
+        else consoleName = lastConsole;
+
+        if (!gameName || !priceStr) continue;
+        const cleanPrice = parseInt(priceStr.replace(/[^0-9]/g, '')) || 0;
+        if (cleanPrice === 0) continue;
+
+        const key = `${gameName}___${consoleName}`;
+        if (!gamesMap.has(key)) {
+          gamesMap.set(key, {
+            id: idSeq++,
+            name: gameName,
+            console: consoleName || 'PS5',
+            observation: observation,
+            imageUrl: imageUrl.startsWith('http') ? imageUrl : '',
+            isOffer: observation.toLowerCase().includes('oferta'),
+            isPreorder: gameName.toLowerCase().includes('preventa'),
+            options: [],
+            selectedOptIdx: 0
+          });
+        }
+
+        const g = gamesMap.get(key);
+        if (observation && !g.observation) {
+          g.observation = observation;
+          if (observation.toLowerCase().includes('oferta')) g.isOffer = true;
+        }
+        if (imageUrl.startsWith('http') && !g.imageUrl) {
+          g.imageUrl = imageUrl;
+        }
+
+        g.options.push({
+          type: accountType || 'PRIMARIA',
+          price: cleanPrice
+        });
+      }
+
+      // Calcular precio mínimo y opción por defecto (Primaria primero)
+      allGames = Array.from(gamesMap.values()).map(g => {
+        const priIdx = g.options.findIndex(o => o.type.includes('PRIMARIA'));
+        g.selectedOptIdx = priIdx >= 0 ? priIdx : 0;
+        g.minPrice = Math.min(...g.options.map(o => o.price));
+        g.primaryPrice = g.options[g.selectedOptIdx].price;
+        return g;
+      });
+
+      loader.classList.add('hidden');
+      updateMetricsAndShowcase();
+      renderFeaturedOffers();
+      applyFiltersAndRender();
+    }
+
+    // =========================================================================
+    // MÉTRICAS, HERO SHOWCASE & OFERTAS DESTACADAS
+    // =========================================================================
+    function updateMetricsAndShowcase() {
+      const ps5Count = allGames.filter(g => g.console.includes('PS5')).length;
+      const ps4Count = allGames.filter(g => g.console.includes('PS4')).length;
+      const offersList = allGames.filter(g => g.isOffer);
+      const preordersCount = allGames.filter(g => g.isPreorder).length;
+
+      document.getElementById('metricTotalGames').textContent = allGames.length;
+      document.getElementById('metricTotalOffers').textContent = offersList.length;
+
+      document.getElementById('countPS5').textContent = `${ps5Count} TÍTULOS`;
+      document.getElementById('countPS4').textContent = `${ps4Count} TÍTULOS`;
+      document.getElementById('countOFERTAS').textContent = `${offersList.length} EN PROMO`;
+      document.getElementById('countPREVENTAS').textContent = `${preordersCount} PREVENTAS`;
+
+      // Poblar las 3 tarjetas flotantes del Hero con juegos top reales
+      heroShowcaseGames = [
+        offersList[0] || allGames[0],
+        offersList[1] || allGames[1],
+        offersList.find(g => g.console.includes('PS4')) || allGames[2]
+      ].filter(Boolean);
+
+      heroShowcaseGames.forEach((g, i) => {
+        const card = document.getElementById(`heroCard${i}`);
+        if (!card || !g) return;
+        const titleEl = card.querySelector('.hero-c-title');
+        const priceEl = card.querySelector('.hero-c-price');
+        const consoleEl = card.querySelector('.hero-c-console');
+        if (titleEl) titleEl.textContent = g.name;
+        if (priceEl) priceEl.textContent = formatMoney(g.minPrice);
+        if (consoleEl) consoleEl.textContent = g.console;
+      });
+    }
+
+    function heroCardClick(idx) {
+      const g = heroShowcaseGames[idx];
+      if (!g) return;
+      searchInput.value = g.name;
+      searchQuery = g.name.toLowerCase();
+      clearSearchBtn.classList.remove('hidden');
+      setFilter('ALL', false);
+      document.getElementById('catalogo').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function renderFeaturedOffers() {
+      const topOffers = allGames.filter(g => g.isOffer).slice(0, 4);
+      const list = topOffers.length > 0 ? topOffers : allGames.slice(0, 4);
+      featuredOffersGrid.innerHTML = list.map(g => buildGameCardHTML(g, 'feat')).join('');
+    }
+
+    // =========================================================================
+    // AUTOCOMPLETE EN VIVO (Estilo The Best)
+    // =========================================================================
+    function updateAutocomplete() {
+      if (searchQuery.length < 2) {
+        autocompleteBox.classList.add('hidden');
+        return;
+      }
+
+      const matches = allGames.filter(g =>
+        g.name.toLowerCase().includes(searchQuery) ||
+        g.console.toLowerCase().includes(searchQuery)
+      );
+
+      if (matches.length === 0) {
+        autocompleteBox.classList.add('hidden');
+        return;
+      }
+
+      const preview = matches.slice(0, 5);
+      autocompleteList.innerHTML = preview.map(g => `
+        <button type="button" onclick="pickAutocompleteById(${g.id})"
+                class="w-full px-4 py-2.5 flex items-center justify-between gap-3 hover:bg-panel2 text-left transition">
+          <div class="min-w-0">
+            <div class="text-xs font-extrabold uppercase text-white truncate">${escapeHtml(g.name)}</div>
+            <div class="flex items-center gap-2 mt-0.5">
+              <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-fondo border border-linea text-textoSuave">${escapeHtml(g.console)}</span>
+              ${g.isOffer ? '<span class="text-[10px] font-bold text-rojoVivo uppercase">🔥 Oferta</span>' : ''}
+            </div>
+          </div>
+          <div class="text-right shrink-0">
+            <div class="text-xs font-black text-white">${formatMoney(g.minPrice)}</div>
+            <div class="text-[9px] font-semibold text-verdeVivo uppercase">Desde</div>
+          </div>
+        </button>
+      `).join('');
+
+      autocompleteViewAll.textContent = `VER LOS ${matches.length} RESULTADOS PARA «${searchQuery.toUpperCase()}» →`;
+      autocompleteBox.classList.remove('hidden');
+    }
+
+    function pickAutocompleteById(id) {
+      const g = allGames.find(item => item.id === id);
+      if (!g) return;
+      searchInput.value = g.name;
+      searchQuery = g.name.toLowerCase();
+      clearSearchBtn.classList.remove('hidden');
+      autocompleteBox.classList.add('hidden');
+      setFilter('ALL', false);
+      document.getElementById('catalogo').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // =========================================================================
+    // FILTRADO, ORDENAMIENTO Y RENDER DEL CATÁLOGO
+    // =========================================================================
+    function setFilter(filterKey, scroll = false) {
+      currentFilter = filterKey;
+      visibleCount = PAGE_SIZE;
+
+      document.querySelectorAll('.console-btn').forEach(b => {
+        const key = b.getAttribute('data-console');
+        if (key === filterKey) {
+          b.className = 'console-btn px-3.5 py-2 rounded-lg text-[11px] font-extrabold uppercase tracking-wider bg-rojo text-white transition shadow-md shadow-rojo/20';
+        } else {
+          const extra = key === 'OFERTAS' ? 'text-rojoVivo' : key === 'PREVENTAS' ? 'text-verdeVivo' : 'text-textoSuave';
+          b.className = `console-btn px-3.5 py-2 rounded-lg text-[11px] font-extrabold uppercase tracking-wider bg-panel border border-linea ${extra} hover:border-rojo hover:text-white transition`;
+        }
+      });
+
+      document.querySelectorAll('.nav-link').forEach(b => {
+        const key = b.getAttribute('data-nav');
+        if (key === filterKey) {
+          b.classList.add('text-white', 'border-rojo');
+          b.classList.remove('border-transparent');
+        } else {
+          b.classList.remove('border-rojo');
+          b.classList.add('border-transparent');
+        }
+      });
+
+      applyFiltersAndRender();
+      if (scroll) {
+        document.getElementById('catalogo').scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    function applyQuickFilter(filterKey) {
+      setFilter(filterKey, true);
+    }
+
+    function resetAllFilters() {
+      searchInput.value = '';
+      searchQuery = '';
+      clearSearchBtn.classList.add('hidden');
+      autocompleteBox.classList.add('hidden');
+      sortSelect.value = 'DEFAULT';
+      currentSort = 'DEFAULT';
+      setFilter('ALL', false);
+    }
+
+    function applyFiltersAndRender() {
+      filteredGames = allGames.filter(g => {
+        if (currentFilter === 'PS5' && !g.console.includes('PS5')) return false;
+        if (currentFilter === 'PS4' && !g.console.includes('PS4')) return false;
+        if (currentFilter === 'OFERTAS' && !g.isOffer) return false;
+        if (currentFilter === 'PREVENTAS' && !g.isPreorder) return false;
+
+        if (searchQuery) {
+          const matchName = g.name.toLowerCase().includes(searchQuery);
+          const matchConsole = g.console.toLowerCase().includes(searchQuery);
+          if (!matchName && !matchConsole) return false;
+        }
+        return true;
+      });
+
+      // Ordenar
+      if (currentSort === 'PRICE_ASC') {
+        filteredGames.sort((a, b) => a.minPrice - b.minPrice);
+      } else if (currentSort === 'PRICE_DESC') {
+        filteredGames.sort((a, b) => b.primaryPrice - a.primaryPrice);
+      } else if (currentSort === 'NAME_ASC') {
+        filteredGames.sort((a, b) => a.name.localeCompare(b.name));
+      }
+
+      renderCatalogPage();
+    }
+
+    function renderCatalogPage() {
+      const total = filteredGames.length;
+      const showing = Math.min(visibleCount, total);
+      gamesCounter.textContent = total === 0
+        ? '0 títulos encontrados'
+        : `Mostrando ${showing} de ${total} títulos disponibles`;
+
+      if (total === 0) {
+        gamesGrid.innerHTML = '';
+        emptyMessage.classList.remove('hidden');
+        loadMoreContainer.classList.add('hidden');
+        return;
+      }
+
+      emptyMessage.classList.add('hidden');
+      const slice = filteredGames.slice(0, showing);
+      gamesGrid.innerHTML = slice.map(g => buildGameCardHTML(g, 'cat')).join('');
+
+      if (showing < total) {
+        loadMoreContainer.classList.remove('hidden');
+        loadMoreCount.textContent = `(+${total - showing} más)`;
+      } else {
+        loadMoreContainer.classList.add('hidden');
+      }
+    }
+
+    function loadMoreGames() {
+      visibleCount += PAGE_SIZE;
+      renderCatalogPage();
+    }
+
+    // =========================================================================
+    // ANATOMÍA DE TARJETA DE PRODUCTO (Estilo The Best)
+    // =========================================================================
+    function getCoverGradient(game) {
+      const n = game.name.toUpperCase();
+      if (n.includes('GTA')) return 'from-[#1a0f2e] via-[#3b1138] to-[#dc0b1c]';
+      if (n.includes('FC2') || n.includes('FIFA')) return 'from-[#062b1c] via-[#0c4a2e] to-[#00b839]';
+      if (n.includes('COD') || n.includes('CALL OF DUTY')) return 'from-[#111318] via-[#262a33] to-[#7c1d1d]';
+      if (n.includes('FORZA') || n.includes('NEED FOR SPEED') || n.includes('GRAN TURISMO')) return 'from-[#0c1a38] via-[#1c396b] to-[#dc0b1c]';
+      if (n.includes('GOW') || n.includes('GOD OF WAR') || n.includes('SPIDER')) return 'from-[#1f0a0c] via-[#4a1016] to-[#dc0b1c]';
+      if (n.includes('MINECRAFT')) return 'from-[#102614] via-[#1c4d24] to-[#3f7a28]';
+      return game.console.includes('PS5')
+        ? 'from-[#0a1329] via-[#122654] to-[#1a1a24]'
+        : 'from-[#081b2e] via-[#0d3b66] to-[#151822]';
+    }
+
+    function buildGameCardHTML(game, scope) {
+      const uid = `${scope}-${game.id}`;
+      const currentOpt = game.options[game.selectedOptIdx] || game.options[0];
+      const isPS5 = game.console.includes('PS5');
+      const headerStripBg = isPS5 ? 'bg-white text-fondo border-b border-gray-200' : 'bg-[#00439c] text-white';
+
+      const optionsHtml = game.options.map((opt, idx) => {
+        const active = idx === game.selectedOptIdx;
+        return `
+          <button type="button"
+                  onclick="selectGameOption(${game.id}, ${idx}, '${scope}')"
+                  data-opt-group="${uid}"
+                  data-opt-idx="${idx}"
+                  class="flex-1 py-1.5 px-2 rounded-md text-[10px] font-extrabold uppercase tracking-wider border transition ${
+                    active
+                      ? 'bg-rojo border-rojo text-white'
+                      : 'bg-panel2 border-linea text-muted hover:border-lineaFuerte hover:text-white'
+                  }">
+            ${opt.type === 'PRIMARIA' ? 'Primaria' : opt.type === 'SECUNDARIA' ? 'Secundaria' : opt.type}
+          </button>
+        `;
+      }).join('');
+
+      // Top Cover Frame (Corte biselado blanco característico de The Best)
+      const safeName = escapeHtml(game.name);
+      const safeConsole = escapeHtml(game.console);
+      const coverContent = game.imageUrl
+        ? `<img src="${escapeHtml(game.imageUrl)}" alt="${safeName}" loading="lazy" class="w-full h-full object-contain p-2">`
+        : `
+          <div class="w-full h-full flex flex-col rounded-lg overflow-hidden shadow-md border border-gray-200">
+            <div class="${headerStripBg} px-2.5 py-1 flex items-center justify-between text-[9px] font-black italic tracking-widest">
+              <span>${safeConsole}</span>
+              <span class="opacity-70">DIGITAL</span>
+            </div>
+            <div class="flex-1 bg-gradient-to-br ${getCoverGradient(game)} p-3.5 flex flex-col justify-between relative overflow-hidden">
+              <div class="absolute -right-4 -bottom-4 text-white/[0.06] text-7xl font-black italic select-none pointer-events-none">${safeConsole}</div>
+              <span class="text-[9px] font-bold uppercase tracking-widest text-white/60">PLAYSTATION STORE</span>
+              <div class="text-white font-black italic uppercase text-sm leading-tight line-clamp-2 drop-shadow">
+                ${safeName}
+              </div>
+            </div>
+          </div>
+        `;
+
+      return `
+        <article class="game-card rounded-xl overflow-hidden flex flex-col justify-between group">
+          <!-- Marco superior blanco con corte biselado -->
+          <div class="relative bg-white corte-foto h-44 p-3 flex items-center justify-center">
+            ${coverContent}
+
+            <!-- Badges flotantes -->
+            <div class="absolute top-2.5 left-2.5 flex items-center gap-1.5 z-10">
+              <span class="px-2 py-0.5 rounded bg-fondo/90 text-white text-[10px] font-black uppercase tracking-wider shadow">
+                ${safeConsole}
+              </span>
+            </div>
+
+            ${game.isOffer ? `
+              <span class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded bg-rojo text-white text-[9px] font-black uppercase tracking-wider shadow-md z-10">
+                🔥 OFERTA
+              </span>
+            ` : game.isPreorder ? `
+              <span class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded bg-amber-500 text-black text-[9px] font-black uppercase tracking-wider shadow-md z-10">
+                ⚡ PREVENTA
+              </span>
+            ` : ''}
+          </div>
+
+          <!-- Cuerpo de información -->
+          <div class="p-4 flex flex-col flex-1 justify-between">
+            <div>
+              <div class="text-[10px] font-extrabold uppercase tracking-widest text-rojoVivo mb-1">
+                ${game.isOffer ? 'OFERTA POR TIEMPO LIMITADO' : game.isPreorder ? 'PREVENTA EXCLUSIVA' : 'ENTREGA DIGITAL'}
+              </div>
+              <h3 class="text-xs sm:text-[13px] font-extrabold uppercase text-texto group-hover:text-white leading-snug line-clamp-2 min-h-[2.4em]" title="${safeName}">
+                ${safeName}
+              </h3>
+
+              <!-- Selector Primaria / Secundaria -->
+              <div class="flex items-center gap-1.5 mt-3">
+                ${optionsHtml}
+              </div>
+            </div>
+
+            <!-- Precio + CTA -->
+            <div class="mt-4 pt-3 border-t border-linea flex items-end justify-between gap-2">
+              <div>
+                <div id="price-${uid}" class="text-xl font-black text-white tracking-tight leading-none">
+                  ${formatMoney(currentOpt.price)}
+                </div>
+                <div class="text-[10px] font-bold text-verdeVivo mt-1">
+                  Transferencia / MP
+                </div>
+              </div>
+
+              <!-- Botones de acción: Carrito Rojo + WhatsApp Directo -->
+              <div class="flex items-center gap-1.5">
+                <a id="wa-${uid}"
+                   href="${buildSingleWaLink(game, currentOpt)}"
+                   target="_blank"
+                   title="Pedir directo por WhatsApp"
+                   class="w-9 h-9 rounded-lg bg-panel2 border border-linea hover:border-wa hover:bg-wa text-wa hover:text-white flex items-center justify-center transition">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654z"/></svg>
+                </a>
+                <button type="button"
+                        onclick="addToCart(${game.id})"
+                        title="Agregar al pedido"
+                        class="w-9 h-9 rounded-lg bg-rojo hover:bg-rojoVivo text-white flex items-center justify-center shadow-md shadow-rojo/25 transition active:scale-95">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
+      `;
+    }
+
+    // Cambiar Primaria/Secundaria en cualquier tarjeta (Catálogo o Destacados)
+    window.selectGameOption = function(gameId, optIdx, scope) {
+      const game = allGames.find(g => g.id === gameId);
+      if (!game || !game.options[optIdx]) return;
+      game.selectedOptIdx = optIdx;
+      const opt = game.options[optIdx];
+
+      // Actualizar tanto en 'feat' como en 'cat' si el juego aparece en ambos
+      ['feat', 'cat'].forEach(sc => {
+        const uid = `${sc}-${gameId}`;
+        const priceEl = document.getElementById(`price-${uid}`);
+        const waEl = document.getElementById(`wa-${uid}`);
+        if (priceEl) priceEl.textContent = formatMoney(opt.price);
+        if (waEl) waEl.href = buildSingleWaLink(game, opt);
+
+        document.querySelectorAll(`[data-opt-group="${uid}"]`).forEach(btn => {
+          const idx = parseInt(btn.getAttribute('data-opt-idx'));
+          if (idx === optIdx) {
+            btn.className = 'flex-1 py-1.5 px-2 rounded-md text-[10px] font-extrabold uppercase tracking-wider border transition bg-rojo border-rojo text-white';
+          } else {
+            btn.className = 'flex-1 py-1.5 px-2 rounded-md text-[10px] font-extrabold uppercase tracking-wider border transition bg-panel2 border-linea text-muted hover:border-lineaFuerte hover:text-white';
+          }
+        });
+      });
+    };
+
+    // =========================================================================
+    // CARRITO DRAWER + PEDIDO COMBINADO POR WHATSAPP
+    // =========================================================================
+    window.addToCart = function(gameId) {
+      const game = allGames.find(g => g.id === gameId);
+      if (!game) return;
+      const opt = game.options[game.selectedOptIdx] || game.options[0];
+      const cartKey = `${game.id}_${opt.type}`;
+
+      const existing = cart.find(item => item.cartKey === cartKey);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({
+          cartKey,
+          name: game.name,
+          console: game.console,
+          type: opt.type,
+          price: opt.price,
+          qty: 1
+        });
+      }
+
+      updateCartUI();
+      showToast(`${game.name} (${opt.type}) sumado al pedido`);
+    };
+
+    window.removeFromCart = function(cartKey) {
+      cart = cart.filter(i => i.cartKey !== cartKey);
+      updateCartUI();
+    };
+
+    window.clearCart = function() {
+      cart = [];
+      updateCartUI();
+    };
+
+    function updateCartUI() {
+      const totalItems = cart.reduce((acc, i) => acc + i.qty, 0);
+      const totalMoney = cart.reduce((acc, i) => acc + (i.price * i.qty), 0);
+
+      const badge = document.getElementById('cartBadge');
+      badge.textContent = totalItems;
+      badge.classList.toggle('hidden', totalItems === 0);
+
+      document.getElementById('drawerCount').textContent = totalItems;
+      document.getElementById('cartTotal').textContent = formatMoney(totalMoney);
+
+      const listEl = document.getElementById('cartItemsList');
+      const waBtn = document.getElementById('cartCheckoutWa');
+
+      if (cart.length === 0) {
+        listEl.innerHTML = `
+          <div class="text-center py-14">
+            <div class="text-4xl opacity-40">🛒</div>
+            <p class="text-xs font-bold uppercase tracking-wider text-muted mt-3">Tu pedido está vacío</p>
+            <p class="text-[11px] text-muted/80 mt-1">Sumá juegos del catálogo para consultar todo junto por WhatsApp.</p>
+          </div>
+        `;
+        waBtn.classList.add('opacity-40', 'pointer-events-none');
+        waBtn.href = '#';
+        return;
+      }
+
+      waBtn.classList.remove('opacity-40', 'pointer-events-none');
+      listEl.innerHTML = cart.map(item => `
+        <div class="bg-panel2 border border-linea rounded-xl p-3.5 flex items-start justify-between gap-3">
+          <div class="min-w-0">
+            <div class="text-xs font-extrabold uppercase text-white leading-snug">${escapeHtml(item.name)}</div>
+            <div class="flex items-center gap-2 mt-1">
+              <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-fondo border border-linea text-textoSuave">${escapeHtml(item.console)}</span>
+              <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-rojo/15 text-rojoVivo uppercase">${escapeHtml(item.type)}</span>
+              ${item.qty > 1 ? `<span class="text-[10px] font-bold text-muted">x${item.qty}</span>` : ''}
+            </div>
+            <div class="text-sm font-black text-white mt-2">${formatMoney(item.price * item.qty)}</div>
+          </div>
+          <button type="button" onclick="removeFromCart('${item.cartKey}')" class="text-muted hover:text-rojoVivo text-xs font-bold p-1 transition" title="Quitar">✕</button>
+        </div>
+      `).join('');
+
+      // Generar mensaje completo para WhatsApp
+      const lines = cart.map(i => `• ${i.qty > 1 ? `(${i.qty}x) ` : ''}*${i.name}* [${i.console} - ${i.type}] → ${formatMoney(i.price * i.qty)}`).join('\n');
+      const fullMsg = `¡Hola! Quiero encargar los siguientes juegos del catálogo:\n\n${lines}\n\n💰 *Total estimado:* ${formatMoney(totalMoney)}\n\n¿Me confirmás stock y datos para abonar? ¡Gracias!`;
+      waBtn.href = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(fullMsg)}`;
+    }
+
+    function openCartDrawer() {
+      updateCartUI();
+      const overlay = document.getElementById('cartOverlay');
+      const drawer = document.getElementById('cartDrawer');
+      overlay.classList.remove('hidden');
+      requestAnimationFrame(() => {
+        overlay.classList.remove('opacity-0');
+        drawer.classList.remove('translate-x-full');
+      });
+    }
+
+    function closeCartDrawer() {
+      const overlay = document.getElementById('cartOverlay');
+      const drawer = document.getElementById('cartDrawer');
+      overlay.classList.add('opacity-0');
+      drawer.classList.add('translate-x-full');
+      setTimeout(() => overlay.classList.add('hidden'), 300);
+    }
+
+    // =========================================================================
+    // UTILIDADES
+    // =========================================================================
+    function formatMoney(num) {
+      return '$ ' + Number(num || 0).toLocaleString('es-AR');
+    }
+
+    function escapeHtml(str) {
+      return String(str || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function buildSingleWaLink(game, opt) {
+      const msg = `¡Hola! Me interesa comprar este juego del catálogo:\n🎮 *${game.name}*\n🕹️ *Consola:* ${game.console}\n🔑 *Cuenta:* ${opt.type}\n💰 *Precio:* ${formatMoney(opt.price)}\n\n¿Cómo coordinamos el pago? ¡Gracias!`;
+      return `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(msg)}`;
+    }
+
+    let toastTimer = null;
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toastText').textContent = message;
+      toast.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+      if (toastTimer) clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+      }, 2400);
+    }
+  </script>
+</body>
+</html>
