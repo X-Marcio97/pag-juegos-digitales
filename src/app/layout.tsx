@@ -1,5 +1,8 @@
 import type { Metadata, Viewport } from 'next';
 import { Montserrat } from 'next/font/google';
+import CartDrawer from '@/components/CartDrawer';
+import { CartProvider } from '@/components/CartProvider';
+import FloatingWhatsApp from '@/components/FloatingWhatsApp';
 import './globals.css';
 
 const montserrat = Montserrat({
@@ -39,8 +42,11 @@ export default function RootLayout({
   return (
     <html lang="es" className={`scroll-smooth dark ${montserrat.variable}`}>
       <body className="font-sans min-h-screen flex flex-col bg-fondo text-texto antialiased selection:bg-rojo selection:text-white">
-        {/* Handed off to @frontend: wrap {children} with <CartProvider> / <AppShell> here */}
-        {children}
+        <CartProvider>
+          {children}
+          <CartDrawer />
+          <FloatingWhatsApp />
+        </CartProvider>
       </body>
     </html>
   );
