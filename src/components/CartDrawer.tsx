@@ -52,7 +52,7 @@ export default function CartDrawer() {
             type="button"
             onClick={closeCart}
             aria-label="Cerrar carrito"
-            className="w-8 h-8 rounded-lg bg-panel2 border border-linea hover:border-rojo text-textoSuave hover:text-white flex items-center justify-center transition"
+            className="w-8 h-8 rounded-lg bg-panel2 border border-linea hover:border-[var(--accent)] text-textoSuave hover:text-white flex items-center justify-center transition"
           >
             ✕
           </button>
@@ -94,14 +94,14 @@ export default function CartDrawer() {
                     <Link
                       href={`/juego/${item.slug}`}
                       onClick={closeCart}
-                      className="text-xs font-extrabold uppercase text-white hover:text-rojoVivo leading-snug line-clamp-2 transition"
+                      className="text-xs font-extrabold uppercase text-white hover:text-[var(--accent)] leading-snug line-clamp-2 transition-colors"
                     >
                       {item.name}
                     </Link>
                     <button
                       type="button"
                       onClick={() => removeFromCart(item.cartKey)}
-                      className="text-muted hover:text-rojoVivo text-xs font-bold p-1 -mt-1 -mr-1 transition shrink-0"
+                      className="text-muted hover:text-[var(--accent)] text-xs font-bold p-1 -mt-1 -mr-1 transition shrink-0"
                       title="Quitar"
                       aria-label={`Quitar ${item.name}`}
                     >
@@ -113,7 +113,7 @@ export default function CartDrawer() {
                     <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-fondo border border-linea text-textoSuave">
                       {item.console}
                     </span>
-                    <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-rojo/15 text-rojoVivo uppercase">
+                    <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-[var(--accent-subtle)] text-[var(--accent)] uppercase transition-colors">
                       {formatOptionLabel(item.type)}
                     </span>
                   </div>
@@ -171,7 +171,7 @@ export default function CartDrawer() {
             onClick={(e) => {
               if (items.length === 0) e.preventDefault();
             }}
-            className={`corte-btn w-full flex items-center justify-center gap-2.5 bg-rojo hover:bg-rojoVivo text-white py-3.5 px-4 text-xs font-black uppercase tracking-wider shadow-lg shadow-rojo/30 transition ${
+            className={`corte-btn w-full flex items-center justify-center gap-2.5 theme-btn text-white py-3.5 px-4 text-xs font-black uppercase tracking-wider shadow-lg shadow-[var(--accent-glow)] transition ${
               items.length === 0 ? 'opacity-40 pointer-events-none' : ''
             }`}
           >
@@ -185,7 +185,7 @@ export default function CartDrawer() {
             <button
               type="button"
               onClick={clearCart}
-              className="w-full text-[11px] font-bold uppercase tracking-wider text-muted hover:text-rojoVivo transition"
+              className="w-full text-[11px] font-bold uppercase tracking-wider text-muted hover:text-[var(--accent)] transition-colors"
             >
               Vaciar pedido
             </button>

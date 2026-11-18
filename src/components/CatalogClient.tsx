@@ -243,7 +243,7 @@ export default function CatalogClient({
             <button
               type="button"
               onClick={() => handleSelectFilter('OFERTAS', true)}
-              className="text-xs font-extrabold uppercase tracking-wider text-rojoVivo hover:text-white transition"
+              className="text-xs font-extrabold uppercase tracking-wider text-[var(--accent)] hover:text-white transition"
             >
               Ver todas las ofertas →
             </button>
@@ -290,7 +290,7 @@ export default function CatalogClient({
                     onClick={() => handleSelectFilter(pill.key, false)}
                     className={`px-3.5 py-2 rounded-lg text-[11px] font-extrabold uppercase tracking-wider transition ${
                       active
-                        ? 'bg-rojo text-white shadow-md shadow-rojo/20'
+                        ? 'theme-btn text-white shadow-md shadow-[var(--accent-glow)]'
                         : `bg-panel border border-linea ${pill.idleClass}`
                     }`}
                   >
@@ -307,7 +307,7 @@ export default function CatalogClient({
                 setSort(e.target.value as CatalogSort);
                 setVisibleCount(PAGE_SIZE);
               }}
-              className="bg-panel2 border border-linea focus:border-rojo rounded-lg px-3 py-2 text-[11px] font-bold uppercase tracking-wider text-texto focus:outline-none"
+              className="bg-panel2 border border-linea focus:border-accent rounded-lg px-3 py-2 text-[11px] font-bold uppercase tracking-wider text-texto focus:outline-none"
             >
               <option value="DEFAULT">Orden: Destacados</option>
               <option value="PRICE_ASC">Precio: Menor a Mayor</option>
@@ -330,7 +330,7 @@ export default function CatalogClient({
             <button
               type="button"
               onClick={handleResetAll}
-              className="mt-4 px-5 py-2 rounded-lg bg-panel2 border border-linea hover:border-rojo text-xs font-bold uppercase text-white transition"
+              className="mt-4 px-5 py-2 rounded-lg bg-panel2 border border-linea hover:border-accent text-xs font-bold uppercase text-white transition"
             >
               Ver todo el catálogo
             </button>
@@ -355,7 +355,7 @@ export default function CatalogClient({
                 <button
                   type="button"
                   onClick={() => setVisibleCount((prev) => prev + PAGE_SIZE)}
-                  className="corte-btn inline-flex items-center gap-2 bg-panel2 hover:bg-rojo border border-lineaFuerte hover:border-rojo text-white text-xs font-black uppercase tracking-widest px-8 py-3.5 transition"
+                  className="corte-btn inline-flex items-center gap-2 bg-panel2 hover:bg-[var(--accent)] border border-lineaFuerte hover:border-[var(--accent)] text-white text-xs font-black uppercase tracking-widest px-8 py-3.5 transition"
                 >
                   <span>Cargar más juegos</span>
                   <span className="text-muted">(+{remainingCount} más)</span>

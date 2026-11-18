@@ -80,7 +80,7 @@ export default function GameDetailModal({
               {game.console}
             </span>
             {game.isOffer && (
-              <span className="px-2 py-0.5 rounded bg-rojo text-white text-[10px] font-black uppercase tracking-wider">
+              <span className="px-2 py-0.5 rounded theme-badge text-white text-[10px] font-black uppercase tracking-wider">
                 🔥 OFERTA
               </span>
             )}
@@ -94,7 +94,7 @@ export default function GameDetailModal({
             type="button"
             onClick={onClose}
             aria-label="Cerrar vista rápida"
-            className="w-8 h-8 rounded-lg bg-panel2 border border-linea hover:border-rojo text-textoSuave hover:text-white flex items-center justify-center transition shrink-0"
+            className="w-8 h-8 rounded-lg bg-panel2 border border-linea hover:border-accent text-textoSuave hover:text-white flex items-center justify-center transition shrink-0"
           >
             ✕
           </button>
@@ -172,7 +172,7 @@ export default function GameDetailModal({
                         onClick={() => setSelectedIdx(idx)}
                         className={`flex-1 py-2.5 px-3 rounded-lg text-xs font-extrabold uppercase tracking-wider border transition ${
                           active
-                            ? 'bg-rojo border-rojo text-white shadow-md shadow-rojo/25'
+                            ? 'theme-btn border-transparent text-white shadow-md shadow-[var(--accent-glow)]'
                             : 'bg-panel2 border-linea text-textoSuave hover:border-lineaFuerte hover:text-white'
                         }`}
                       >
@@ -198,7 +198,7 @@ export default function GameDetailModal({
                   </>
                 ) : (
                   <>
-                    <strong className="text-rojoVivo uppercase">
+                    <strong className="text-[var(--accent)] uppercase">
                       Cuenta Primaria:
                     </strong>{' '}
                     Jugás desde tu propio usuario personal de PlayStation, con
@@ -231,7 +231,7 @@ export default function GameDetailModal({
                     addToCart(game, currentOpt);
                     onClose();
                   }}
-                  className="corte-btn bg-rojo hover:bg-rojoVivo text-white py-3 px-4 text-xs font-black uppercase tracking-wider shadow-lg shadow-rojo/30 transition active:scale-[0.98]"
+                  className="corte-btn theme-btn text-white py-3 px-4 text-xs font-black uppercase tracking-wider shadow-lg shadow-[var(--accent-glow)] transition active:scale-[0.98]"
                 >
                   + Agregar al Pedido
                 </button>

@@ -29,7 +29,7 @@ export async function GET(request: NextRequest) {
     return NextResponse.json(data, {
       status: 200,
       headers: {
-        'Cache-Control': 's-maxage=120, stale-while-revalidate=300',
+        'Cache-Control': 's-maxage=10, stale-while-revalidate=30',
       },
     });
   } catch (error) {

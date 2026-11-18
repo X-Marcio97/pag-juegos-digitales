@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import type { CatalogFilter, StoreConfig } from '@/types/game';
 import { useCart } from './CartProvider';
+import { useTheme } from './ThemeProvider';
 import { buildGeneralWaLink, DEFAULT_STORE_CONFIG } from './format';
 
 interface FooterProps {
@@ -15,11 +16,8 @@ export default function Footer({
   onSelectFilter,
 }: FooterProps) {
   const { openCart } = useCart();
+  const { logoSrc } = useTheme();
   const waHref = buildGeneralWaLink(config.whatsappPhone);
-
-  const brandParts = (config.storeName || 'GAME STORE').trim().split(/\s+/);
-  const firstWord = brandParts[0] || 'GAME';
-  const restWords = brandParts.slice(1).join(' ') || 'STORE';
 
   const renderFilterItem = (label: string, filter: CatalogFilter) => {
     if (onSelectFilter) {
@@ -27,7 +25,7 @@ export default function Footer({
         <button
           type="button"
           onClick={() => onSelectFilter(filter)}
-          className="hover:text-rojoVivo transition text-left"
+          className="hover:text-[var(--accent)] transition text-left"
         >
           {label}
         </button>
@@ -36,7 +34,7 @@ export default function Footer({
     return (
       <Link
         href={filter === 'ALL' ? '/#catalogo' : `/?filter=${filter}#catalogo`}
-        className="hover:text-rojoVivo transition"
+        className="hover:text-[var(--accent)] transition"
       >
         {label}
       </Link>
@@ -46,11 +44,15 @@ export default function Footer({
   return (
     <footer className="bg-panel border-t border-linea text-xs text-textoSuave w-full mt-auto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        {/* Columna 1: Marca */}
+        {/* Columna 1: Marca con Logo dinámico */}
         <div className="space-y-3">
-          <div className="text-xl font-black italic uppercase tracking-tight text-white">
-            {firstWord}
-            <span className="text-rojo">{restWords}</span>
+          <div className="relative h-10 w-auto flex items-center">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={logoSrc}
+              alt={config.storeName || 'INTERGAMES ROSARIO'}
+              className="h-9 sm:h-10 w-auto max-w-[190px] object-contain drop-shadow-[0_2px_8px_var(--accent-glow)] transition-all duration-300"
+            />
           </div>
           <p className="text-xs text-muted leading-relaxed">
             Venta de juegos digitales originales para PlayStation 4 y PlayStation

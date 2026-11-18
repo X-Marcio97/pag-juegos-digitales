@@ -3,7 +3,7 @@ export default function TrustStrip() {
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
       <div className="bg-panel border border-linea rounded-2xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-linea">
         <div className="p-6 flex items-start gap-4">
-          <div className="w-10 h-10 rounded-lg bg-rojo/10 border border-rojo/30 flex items-center justify-center text-rojo shrink-0">
+          <div className="w-10 h-10 rounded-lg bg-[var(--accent-subtle)] border border-[var(--accent)]/30 flex items-center justify-center text-[var(--accent)] shrink-0 transition-colors">
             <svg
               className="w-5 h-5"
               fill="none"
@@ -30,7 +30,7 @@ export default function TrustStrip() {
         </div>
 
         <div className="p-6 flex items-start gap-4">
-          <div className="w-10 h-10 rounded-lg bg-rojo/10 border border-rojo/30 flex items-center justify-center text-rojo shrink-0">
+          <div className="w-10 h-10 rounded-lg bg-[var(--accent-subtle)] border border-[var(--accent)]/30 flex items-center justify-center text-[var(--accent)] shrink-0 transition-colors">
             <svg
               className="w-5 h-5"
               fill="none"
@@ -57,7 +57,7 @@ export default function TrustStrip() {
         </div>
 
         <div className="p-6 flex items-start gap-4">
-          <div className="w-10 h-10 rounded-lg bg-rojo/10 border border-rojo/30 flex items-center justify-center text-rojo shrink-0">
+          <div className="w-10 h-10 rounded-lg bg-[var(--accent-subtle)] border border-[var(--accent)]/30 flex items-center justify-center text-[var(--accent)] shrink-0 transition-colors">
             <svg
               className="w-5 h-5"
               fill="none"
@@ -84,7 +84,7 @@ export default function TrustStrip() {
         </div>
 
         <div className="p-6 flex items-start gap-4">
-          <div className="w-10 h-10 rounded-lg bg-rojo/10 border border-rojo/30 flex items-center justify-center text-rojo shrink-0">
+          <div className="w-10 h-10 rounded-lg bg-[var(--accent-subtle)] border border-[var(--accent)]/30 flex items-center justify-center text-[var(--accent)] shrink-0 transition-colors">
             <svg
               className="w-5 h-5"
               fill="none"

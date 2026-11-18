@@ -41,7 +41,7 @@ export default function CategoryStrip({
             </div>
           </div>
           <div className="p-3.5">
-            <div className="font-black italic uppercase text-sm text-white group-hover:text-rojoVivo transition">
+            <div className="font-black italic uppercase text-sm text-white group-hover:text-[var(--accent)] transition-colors">
               PlayStation 5
             </div>
             <div className="text-[11px] font-bold text-muted uppercase mt-0.5">
@@ -68,7 +68,7 @@ export default function CategoryStrip({
             </div>
           </div>
           <div className="p-3.5">
-            <div className="font-black italic uppercase text-sm text-white group-hover:text-rojoVivo transition">
+            <div className="font-black italic uppercase text-sm text-white group-hover:text-[var(--accent)] transition-colors">
               PlayStation 4
             </div>
             <div className="text-[11px] font-bold text-muted uppercase mt-0.5">
@@ -86,7 +86,7 @@ export default function CategoryStrip({
           <div className="h-24 sm:h-28 bg-white corte-foto flex items-center justify-center relative p-4 overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-red-50 to-white" />
             <div className="relative z-10 text-center">
-              <span className="text-2xl sm:text-3xl font-black italic tracking-tight text-rojo group-hover:scale-110 inline-block transition">
+              <span className="text-2xl sm:text-3xl font-black italic tracking-tight text-[var(--accent)] group-hover:scale-110 inline-block transition">
                 🔥 OFERTAS
               </span>
               <span className="block text-[9px] font-extrabold uppercase tracking-[0.2em] text-gray-500">
@@ -95,7 +95,7 @@ export default function CategoryStrip({
             </div>
           </div>
           <div className="p-3.5">
-            <div className="font-black italic uppercase text-sm text-white group-hover:text-rojoVivo transition">
+            <div className="font-black italic uppercase text-sm text-white group-hover:text-[var(--accent)] transition-colors">
               Promociones
             </div>
             <div className="text-[11px] font-bold text-rojoVivo uppercase mt-0.5">

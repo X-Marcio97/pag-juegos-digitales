@@ -6,6 +6,8 @@ import { useRouter } from 'next/navigation';
 import type { CatalogFilter, Game, StoreConfig } from '@/types/game';
 import { useCart } from './CartProvider';
 import GameCover from './GameCover';
+import ThemeToggle from './ThemeToggle';
+import { useTheme } from './ThemeProvider';
 import { buildGeneralWaLink, DEFAULT_STORE_CONFIG, formatMoney } from './format';
 
 interface HeaderProps {
@@ -31,6 +33,7 @@ export default function Header({
 }: HeaderProps) {
   const router = useRouter();
   const { totalItems, openCart } = useCart();
+  const { theme, logoSrc, themeName } = useTheme();
   const [localSearch, setLocalSearch] = useState(controlledSearch || '');
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [remoteMatches, setRemoteMatches] = useState<Game[]>([]);
@@ -101,9 +104,6 @@ export default function Header({
     dropdownOpen && trimmedQuery.length >= 2 && previewMatches.length > 0;
 
   const waHref = buildGeneralWaLink(config.whatsappPhone);
-  const brandParts = (config.storeName || 'GAME STORE').trim().split(/\s+/);
-  const firstWord = brandParts[0] || 'GAME';
-  const restWords = brandParts.slice(1).join(' ') || 'STORE';
 
   const handleInputChange = (val: string) => {
     if (isControlled && onSearchChange) {
@@ -158,14 +158,14 @@ export default function Header({
     { key: 'ALL', label: 'Catálogo' },
     { key: 'PS5', label: 'PlayStation 5' },
     { key: 'PS4', label: 'PlayStation 4' },
-    { key: 'OFERTAS', label: '🔥 Ofertas', accent: 'text-rojoVivo' },
+    { key: 'OFERTAS', label: '🔥 Ofertas', accent: 'theme-accent-text' },
     { key: 'PREVENTAS', label: 'Preventas' },
   ];
 
   return (
     <>
-      {/* 1. TOP ANNOUNCEMENT BAR (Rojo sólido estilo The Best) */}
-      <div className="bg-rojo text-white text-[12px] sm:text-[13px] font-semibold w-full">
+      {/* 1. TOP ANNOUNCEMENT BAR (Color dinámico según tema: Vice Pink o Cyan Arcade) */}
+      <div className="theme-topbar text-white text-[12px] sm:text-[13px] font-semibold w-full shadow-inner">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex items-center justify-between gap-4">
           <div className="flex items-center gap-2 truncate">
             <svg
@@ -184,62 +184,57 @@ export default function Header({
             </svg>
             <span className="truncate">{config.announcement}</span>
           </div>
-          <div className="hidden sm:flex items-center gap-5 text-[11px] font-bold tracking-wider uppercase shrink-0">
-            <a href="#como-funciona" className="hover:text-white/80 transition">
-              Cómo funciona
-            </a>
-            <button
-              type="button"
-              onClick={() => handleNavFilter('OFERTAS')}
-              className="hover:text-white/80 transition uppercase"
-            >
-              Ofertas
-            </button>
-            <a
-              href={waHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-white/80 transition"
-            >
-              Contacto
-            </a>
+
+          <div className="flex items-center gap-4 shrink-0">
+            {/* Quick Theme Switcher Pill in Top Bar */}
+            <ThemeToggle variant="topbar" />
+
+            <div className="hidden sm:flex items-center gap-5 text-[11px] font-bold tracking-wider uppercase">
+              <a href="#como-funciona" className="hover:text-white/80 transition">
+                Cómo funciona
+              </a>
+              <button
+                type="button"
+                onClick={() => handleNavFilter('OFERTAS')}
+                className="hover:text-white/80 transition uppercase"
+              >
+                Ofertas
+              </button>
+              <a
+                href={waHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white/80 transition"
+              >
+                Contacto
+              </a>
+            </div>
           </div>
         </div>
       </div>
 
       {/* 2. MAIN STICKY HEADER */}
-      <header className="sticky top-0 z-40 bg-fondo/95 backdrop-blur-md border-b border-linea w-full">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between gap-3 sm:gap-6">
-          {/* Logo Estilo Gamer Heráldico */}
+      <header className="sticky top-0 z-40 bg-fondo/95 backdrop-blur-md border-b border-linea w-full transition-colors">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-3.5 flex items-center justify-between gap-3 sm:gap-6">
+          {/* Logo Oficial INTERGAMES ROSARIO dinámico según tema */}
           <Link
             href="/"
             onClick={handleLogoClick}
-            className="flex items-center gap-2.5 shrink-0 group"
+            className="flex items-center gap-3 shrink-0 group focus:outline-none"
+            title={`${config.storeName || 'INTERGAMES ROSARIO'} - Inicio (Tema: ${themeName})`}
           >
-            <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-rojo via-rojoOscuro to-black border border-rojo/60 flex items-center justify-center shadow-lg shadow-rojo/25 group-hover:scale-105 transition">
-              <svg
-                className="w-6 h-6 text-white"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path d="M21 6H3a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2zm-10 7H8v3H6v-3H3v-2h3V8h2v3h3v2zm4.5 2a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm4-3a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
-              </svg>
+            <div className="relative h-11 sm:h-13 w-auto flex items-center">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={logoSrc}
+                alt={config.storeName || 'INTERGAMES ROSARIO'}
+                className="h-10 sm:h-12 md:h-13 w-auto max-w-[170px] sm:max-w-[210px] md:max-w-[240px] object-contain drop-shadow-[0_2px_12px_var(--accent-glow)] transition-transform duration-300 group-hover:scale-105"
+              />
             </div>
-            <div className="leading-none">
-              <div className="flex items-baseline gap-1">
-                <span className="text-[10px] font-extrabold italic uppercase tracking-widest text-rojo block">
-                  DIGITAL
-                </span>
-              </div>
-              <span className="text-xl sm:text-2xl font-black italic uppercase tracking-tight text-white group-hover:text-rojoVivo transition">
-                {firstWord}
-                <span className="text-rojo">{restWords}</span>
-              </span>
-              <span className="hidden sm:block text-[9px] font-bold tracking-[0.18em] text-muted uppercase mt-0.5">
-                {config.tagline}
-              </span>
-            </div>
+            {/* Accessible screen-reader title */}
+            <span className="sr-only">
+              {config.storeName || 'INTERGAMES ROSARIO'} - {config.tagline}
+            </span>
           </Link>
 
           {/* Barra de Búsqueda Centrada con Autocomplete en vivo */}
@@ -249,7 +244,7 @@ export default function Header({
                 e.preventDefault();
                 handleViewAllResults();
               }}
-              className="flex items-center bg-panel2 border border-linea focus-within:border-rojo rounded-xl px-3.5 py-2.5 transition"
+              className="flex items-center bg-panel2 border border-linea focus-within:border-accent rounded-xl px-3.5 py-2 sm:py-2.5 transition"
             >
               <svg
                 className="w-4 h-4 text-muted mr-2.5 shrink-0"
@@ -316,7 +311,7 @@ export default function Header({
                               {g.console}
                             </span>
                             {g.isOffer && (
-                              <span className="text-[10px] font-bold text-rojoVivo uppercase">
+                              <span className="text-[10px] font-bold theme-accent-text uppercase">
                                 🔥 Oferta
                               </span>
                             )}
@@ -342,7 +337,7 @@ export default function Header({
                 <button
                   type="button"
                   onClick={handleViewAllResults}
-                  className="w-full py-2.5 px-4 bg-panel2 hover:bg-rojo text-center text-xs font-extrabold uppercase tracking-wider text-texto hover:text-white transition"
+                  className="w-full py-2.5 px-4 bg-panel2 hover:bg-[var(--accent)] text-center text-xs font-extrabold uppercase tracking-wider text-texto hover:text-white transition"
                 >
                   VER LOS {totalMatchCount} RESULTADOS PARA «
                   {trimmedQuery.toUpperCase()}» →
@@ -351,33 +346,39 @@ export default function Header({
             )}
           </div>
 
-          {/* Botón Carrito (Abre Drawer) */}
-          <button
-            type="button"
-            onClick={openCart}
-            aria-label="Abrir carrito"
-            className="relative w-11 h-11 rounded-xl bg-panel2 border border-linea hover:border-rojo flex items-center justify-center text-texto hover:text-white transition shrink-0"
-          >
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth={2}
-              viewBox="0 0 24 24"
-              aria-hidden="true"
+          {/* Right Section: Theme Toggle + Carrito */}
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+            {/* Header Switcher Pill (desktop & tablet) */}
+            <ThemeToggle variant="header" className="hidden sm:inline-flex" />
+
+            {/* Botón Carrito (Abre Drawer) */}
+            <button
+              type="button"
+              onClick={openCart}
+              aria-label="Abrir carrito"
+              className="relative w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-panel2 border border-linea hover:border-accent flex items-center justify-center text-texto hover:text-white transition shrink-0"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-              />
-            </svg>
-            {totalItems > 0 && (
-              <span className="absolute -top-1.5 -right-1.5 min-w-[20px] h-5 px-1 rounded-full bg-rojo text-white text-[10px] font-black flex items-center justify-center shadow-md">
-                {totalItems}
-              </span>
-            )}
-          </button>
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                />
+              </svg>
+              {totalItems > 0 && (
+                <span className="absolute -top-1.5 -right-1.5 min-w-[20px] h-5 px-1 rounded-full theme-badge text-white text-[10px] font-black flex items-center justify-center shadow-md">
+                  {totalItems}
+                </span>
+              )}
+            </button>
+          </div>
         </div>
 
         {/* 3. SUB-NAVBAR DE CATEGORÍAS */}
@@ -393,7 +394,7 @@ export default function Header({
                     onClick={() => handleNavFilter(item.key)}
                     className={`pb-1 border-b-2 transition ${
                       isActive
-                        ? 'text-white border-rojo'
+                        ? 'text-white border-[var(--accent)]'
                         : `${item.accent || 'text-textoSuave'} hover:text-white border-transparent`
                     }`}
                   >

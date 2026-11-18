@@ -27,13 +27,13 @@ interface HeroSlide {
 
 const HERO_SLIDES: HeroSlide[] = [
   {
-    glowClass: 'hero-glow-red',
+    glowClass: 'hero-glow-theme',
     chip: 'JUEGOS DIGITALES · STOCK EN VIVO',
-    chipStyle: 'border-rojo/50 bg-rojo/10 text-rojoVivo',
+    chipStyle: 'border-[var(--accent)]/50 bg-[var(--accent)]/10 text-[var(--accent)]',
     line1: 'LOS MEJORES',
     line2: 'JUEGOS DIGITALES',
-    strokeClass: 'text-stroke-red',
-    dotColor: 'text-rojo',
+    strokeClass: 'text-stroke-theme',
+    dotColor: 'text-[var(--accent)]',
     subtitlePrefix: 'Catálogo completo de ',
     subtitleStrong: 'PS4 y PS5 con precios actualizados al instante',
     subtitleSuffix:
@@ -137,7 +137,7 @@ export default function HeroSlider({
               <button
                 type="button"
                 onClick={() => onQuickFilter('ALL')}
-                className="corte-btn inline-flex items-center gap-2.5 bg-rojo hover:bg-rojoVivo text-white text-xs sm:text-sm font-black uppercase tracking-wider px-6 py-3.5 shadow-lg shadow-rojo/30 transition active:scale-[0.98]"
+                className="corte-btn inline-flex items-center gap-2.5 theme-btn text-white text-xs sm:text-sm font-black uppercase tracking-wider px-6 py-3.5 shadow-lg shadow-[var(--accent-glow)] transition active:scale-[0.98]"
               >
                 <span>Ver Catálogo</span>
                 <span>→</span>
@@ -162,7 +162,7 @@ export default function HeroSlider({
                 </div>
               </div>
               <div>
-                <div className="text-2xl sm:text-3xl font-black italic text-rojoVivo leading-none">
+                <div className="text-2xl sm:text-3xl font-black italic text-[var(--accent)] leading-none transition-colors">
                   {stats.offersCount}
                 </div>
                 <div className="text-[10px] font-bold uppercase tracking-widest text-muted mt-1">
@@ -221,7 +221,7 @@ export default function HeroSlider({
                 >
                   <div className="bg-fondo text-white text-[9px] font-black italic tracking-widest px-2 py-1 rounded-t-lg flex justify-between">
                     <span>{card1.console}</span>
-                    <span className="text-rojoVivo">🔥 OFERTA</span>
+                    <span className="text-[var(--accent)] font-black">🔥 OFERTA</span>
                   </div>
                   <GameCover
                     name={card1.name}
@@ -233,7 +233,7 @@ export default function HeroSlider({
                     <span className="text-[9px] font-bold text-gray-500 uppercase">
                       Desde
                     </span>
-                    <span className="text-sm font-black text-rojo">
+                    <span className="text-sm font-black text-[var(--accent)]">
                       {formatMoney(card1.minPrice)}
                     </span>
                   </div>
@@ -276,7 +276,7 @@ export default function HeroSlider({
             type="button"
             onClick={prevSlide}
             aria-label="Slide anterior"
-            className="w-8 h-8 rounded-full bg-panel2 border border-linea hover:border-rojo text-textoSuave hover:text-white flex items-center justify-center transition"
+            className="w-8 h-8 rounded-full bg-panel2 border border-linea hover:border-[var(--accent)] text-textoSuave hover:text-white flex items-center justify-center transition"
           >
             <svg
               className="w-4 h-4"
@@ -303,7 +303,7 @@ export default function HeroSlider({
                 aria-label={`Ir al slide ${idx + 1}`}
                 className={`h-1 rounded-full transition-all ${
                   idx === currentSlide
-                    ? 'w-8 bg-rojo'
+                    ? 'w-8 bg-[var(--accent)] shadow-sm'
                     : 'w-6 bg-lineaFuerte hover:bg-muted'
                 }`}
               />
@@ -314,7 +314,7 @@ export default function HeroSlider({
             type="button"
             onClick={nextSlide}
             aria-label="Slide siguiente"
-            className="w-8 h-8 rounded-full bg-panel2 border border-linea hover:border-rojo text-textoSuave hover:text-white flex items-center justify-center transition"
+            className="w-8 h-8 rounded-full bg-panel2 border border-linea hover:border-[var(--accent)] text-textoSuave hover:text-white flex items-center justify-center transition"
           >
             <svg
               className="w-4 h-4"

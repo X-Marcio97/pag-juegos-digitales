@@ -12,11 +12,11 @@ export const CATALOG_CSV_URL = `https://docs.google.com/spreadsheets/d/${SHEET_I
 export const CONFIG_CSV_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(CONFIG_SHEET_NAME)}`;
 
 export const CATALOG_CACHE_TAG = 'catalog';
-export const CATALOG_REVALIDATE_SECONDS = 300;
+export const CATALOG_REVALIDATE_SECONDS = 10;
 
 export const DEFAULT_STORE_CONFIG: StoreConfig = {
-  storeName: 'GAME STORE',
-  tagline: 'Juegos Digitales Originales',
+  storeName: 'INTERGAMES ROSARIO',
+  tagline: 'Gaming, consolas, juegos digitales y accesorios en Rosario',
   announcement:
     'Entrega digital en el día · Precios actualizados en vivo · PS4 & PS5',
   whatsappPhone: process.env.NEXT_PUBLIC_WHATSAPP_PHONE || '5491100000000',

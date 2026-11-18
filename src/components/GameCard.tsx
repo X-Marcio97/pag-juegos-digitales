@@ -81,7 +81,7 @@ export default function GameCard({
         </div>
 
         {game.isOffer ? (
-          <span className="absolute top-2.5 right-2.5 px-2 py-0.5 rounded bg-rojo text-white text-[9px] font-black uppercase tracking-wider shadow-md z-10 pointer-events-none">
+          <span className="absolute top-2.5 right-2.5 px-2 py-0.5 rounded theme-badge text-white text-[9px] font-black uppercase tracking-wider shadow-md z-10 pointer-events-none">
             🔥 OFERTA
           </span>
         ) : game.isPreorder ? (
@@ -95,7 +95,7 @@ export default function GameCard({
           <button
             type="button"
             onClick={handleOpenCover}
-            className="absolute bottom-3 left-3 opacity-0 group-hover:opacity-100 focus:opacity-100 px-2.5 py-1 rounded bg-fondo/90 hover:bg-rojo text-white text-[9px] font-extrabold uppercase tracking-wider shadow transition z-10"
+            className="absolute bottom-3 left-3 opacity-0 group-hover:opacity-100 focus:opacity-100 px-2.5 py-1 rounded bg-fondo/90 hover:bg-[var(--accent)] text-white text-[9px] font-extrabold uppercase tracking-wider shadow transition z-10"
           >
             Vista rápida
           </button>
@@ -106,7 +106,7 @@ export default function GameCard({
       <div className="p-4 flex flex-col flex-1 justify-between">
         <div>
           <div className="flex items-center justify-between gap-2 mb-1">
-            <span className="text-[10px] font-extrabold uppercase tracking-widest text-rojoVivo truncate">
+            <span className="text-[10px] font-extrabold uppercase tracking-widest text-[var(--accent)] truncate transition-colors">
               {game.isOffer
                 ? 'OFERTA POR TIEMPO LIMITADO'
                 : game.isPreorder
@@ -128,7 +128,7 @@ export default function GameCard({
           >
             <Link
               href={`/juego/${game.slug}`}
-              className="hover:text-rojoVivo transition"
+              className="hover:text-[var(--accent)] transition-colors"
             >
               {game.name}
             </Link>
@@ -145,7 +145,7 @@ export default function GameCard({
                   onClick={() => setSelectedIdx(idx)}
                   className={`flex-1 py-1.5 px-2 rounded-md text-[10px] font-extrabold uppercase tracking-wider border transition ${
                     active
-                      ? 'bg-rojo border-rojo text-white'
+                      ? 'theme-btn border-transparent text-white shadow-sm'
                       : 'bg-panel2 border-linea text-muted hover:border-lineaFuerte hover:text-white'
                   }`}
                 >
@@ -167,7 +167,7 @@ export default function GameCard({
             </div>
           </div>
 
-          {/* Botones de acción: WhatsApp Directo + Carrito Rojo */}
+          {/* Botones de acción: WhatsApp Directo + Carrito Reactivo */}
           <div className="flex items-center gap-1.5">
             <a
               href={waHref}
@@ -191,7 +191,7 @@ export default function GameCard({
               onClick={() => addToCart(game, currentOpt)}
               title="Agregar al pedido"
               aria-label={`Agregar ${game.name} al pedido`}
-              className="w-9 h-9 rounded-lg bg-rojo hover:bg-rojoVivo text-white flex items-center justify-center shadow-md shadow-rojo/25 transition active:scale-95"
+              className="w-9 h-9 rounded-lg theme-btn text-white flex items-center justify-center shadow-md transition active:scale-95"
             >
               <svg
                 className="w-4 h-4"

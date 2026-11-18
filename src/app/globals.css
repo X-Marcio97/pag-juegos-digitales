@@ -2,15 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+:root,
+[data-theme="vice"] {
   --fondo: #08080a;
   --panel: #101014;
   --panel-2: #17171d;
   --linea: #24242c;
   --linea-fuerte: #34343e;
-  --rojo: #dc0b1c;
-  --rojo-vivo: #ff2e3e;
-  --rojo-oscuro: #a30813;
+
+  /* Vice City Neon Theme (GTA VI Magenta / Pink / Violet) */
+  --accent: #f43f5e;
+  --accent-hover: #fb7185;
+  --accent-dark: #e11d48;
+  --accent-secondary: #a855f7;
+  --accent-glow: rgba(244, 63, 94, 0.35);
+  --accent-glow-strong: rgba(244, 63, 94, 0.6);
+  --accent-subtle: rgba(244, 63, 94, 0.12);
+  --topbar-bg: #e11d48;
+  --badge-bg: #f43f5e;
+
+  /* Compatibility aliases */
+  --rojo: #f43f5e;
+  --rojo-vivo: #fb7185;
+  --rojo-oscuro: #9f1239;
+
+  --verde-geek: #00b839;
+  --verde-vivo: #17d452;
+  --wa: #4dc247;
+  --texto: #f2f2f5;
+  --texto-suave: #c3c3cd;
+  --muted: #92929f;
+}
+
+[data-theme="cyan"] {
+  --fondo: #08080a;
+  --panel: #101014;
+  --panel-2: #17171d;
+  --linea: #24242c;
+  --linea-fuerte: #34343e;
+
+  /* Arcade Electric Cyan Theme (Arcade Cyan / Blue / Indigo) */
+  --accent: #00a2ff;
+  --accent-hover: #38bdf8;
+  --accent-dark: #0284c7;
+  --accent-secondary: #2563eb;
+  --accent-glow: rgba(0, 162, 255, 0.35);
+  --accent-glow-strong: rgba(0, 162, 255, 0.6);
+  --accent-subtle: rgba(0, 162, 255, 0.12);
+  --topbar-bg: #0284c7;
+  --badge-bg: #00a2ff;
+
+  /* Compatibility aliases */
+  --rojo: #00a2ff;
+  --rojo-vivo: #38bdf8;
+  --rojo-oscuro: #0369a1;
+
   --verde-geek: #00b839;
   --verde-vivo: #17d452;
   --wa: #4dc247;
@@ -24,12 +70,67 @@ body {
   color: var(--texto);
   font-family: var(--font-montserrat), 'Montserrat', sans-serif;
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Texto outline estilo The Best */
-.text-stroke-red {
-  -webkit-text-stroke: 2px #dc0b1c;
+/* Selección reactiva al tema */
+::selection {
+  background-color: var(--accent);
+  color: #ffffff;
+}
+
+/* ========================================================
+   ESTILOS DINÁMICOS DE TEMÁTICA
+   ======================================================== */
+
+.theme-topbar {
+  background-color: var(--topbar-bg);
+  transition: background-color 0.3s ease;
+}
+
+.theme-btn {
+  background-color: var(--accent);
+  color: #ffffff;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+.theme-btn:hover {
+  background-color: var(--accent-hover);
+  box-shadow: 0 0 22px var(--accent-glow);
+}
+
+.theme-badge {
+  background-color: var(--badge-bg);
+  color: #ffffff;
+  transition: background-color 0.3s ease;
+}
+
+.theme-accent-text {
+  color: var(--accent);
+  transition: color 0.3s ease;
+}
+
+.theme-accent-border {
+  border-color: var(--accent);
+  transition: border-color 0.3s ease;
+}
+
+.theme-glow {
+  box-shadow: 0 0 25px -4px var(--accent-glow);
+}
+
+/* Outline dinámico del tema */
+.text-stroke-theme {
+  -webkit-text-stroke: 2px var(--accent);
   color: transparent;
+  transition: -webkit-text-stroke-color 0.3s ease;
+}
+
+/* Texto outline estilo The Best / Legacy */
+.text-stroke-red {
+  -webkit-text-stroke: 2px var(--accent);
+  color: transparent;
+  transition: -webkit-text-stroke-color 0.3s ease;
 }
 
 .text-stroke-green {
@@ -43,6 +144,7 @@ body {
 }
 
 @media (max-width: 640px) {
+  .text-stroke-theme,
   .text-stroke-red,
   .text-stroke-green,
   .text-stroke-blue {
@@ -59,7 +161,7 @@ body {
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
 }
 
-/* Hover gamer de tarjetas */
+/* Hover gamer de tarjetas reactivo al tema */
 .game-card {
   background-color: var(--panel);
   border: 1px solid var(--linea);
@@ -68,8 +170,8 @@ body {
 
 .game-card:hover {
   transform: translateY(-6px);
-  border-color: var(--rojo);
-  box-shadow: 0 14px 28px -8px rgba(220, 11, 28, 0.28);
+  border-color: var(--accent);
+  box-shadow: 0 14px 28px -8px var(--accent-glow);
 }
 
 .cat-card {
@@ -80,11 +182,11 @@ body {
 
 .cat-card:hover {
   transform: translateY(-6px);
-  border-color: var(--rojo);
-  box-shadow: 0 12px 24px -8px rgba(220, 11, 28, 0.25);
+  border-color: var(--accent);
+  box-shadow: 0 12px 24px -8px var(--accent-glow);
 }
 
-/* Prefijo de título con barra roja vertical */
+/* Prefijo de título con barra vertical reactivo al tema */
 .section-heading {
   display: flex;
   align-items: center;
@@ -96,16 +198,37 @@ body {
   display: inline-block;
   width: 4px;
   height: 1.5em;
-  background-color: var(--rojo);
+  background-color: var(--accent);
   border-radius: 2px;
   flex-shrink: 0;
+  transition: background-color 0.3s ease;
 }
 
-/* Glow ambiental del Hero */
-.hero-glow-red {
+/* Glow ambiental dinámico del Hero */
+.hero-glow-theme {
   background:
-    radial-gradient(ellipse 60% 70% at 20% 45%, rgba(220, 11, 28, 0.18), transparent 70%),
-    radial-gradient(ellipse 45% 60% at 78% 55%, rgba(220, 11, 28, 0.12), transparent 65%);
+    radial-gradient(ellipse 60% 70% at 20% 45%, var(--accent-glow), transparent 70%),
+    radial-gradient(ellipse 45% 60% at 78% 55%, var(--accent-subtle), transparent 65%);
+}
+
+[data-theme="vice"] .hero-glow-theme,
+[data-theme="vice"] .hero-glow-red {
+  background:
+    radial-gradient(ellipse 60% 70% at 20% 45%, rgba(244, 63, 94, 0.24), transparent 70%),
+    radial-gradient(ellipse 45% 60% at 78% 55%, rgba(168, 85, 247, 0.18), transparent 65%);
+}
+
+[data-theme="cyan"] .hero-glow-theme,
+[data-theme="cyan"] .hero-glow-red {
+  background:
+    radial-gradient(ellipse 60% 70% at 20% 45%, rgba(0, 162, 255, 0.24), transparent 70%),
+    radial-gradient(ellipse 45% 60% at 78% 55%, rgba(37, 99, 235, 0.18), transparent 65%);
+}
+
+.hero-glow-blue {
+  background:
+    radial-gradient(ellipse 60% 70% at 20% 45%, rgba(37, 99, 235, 0.2), transparent 70%),
+    radial-gradient(ellipse 45% 60% at 78% 55%, rgba(0, 162, 255, 0.14), transparent 65%);
 }
 
 .hero-glow-green {
@@ -114,10 +237,39 @@ body {
     radial-gradient(ellipse 45% 60% at 78% 55%, rgba(0, 184, 57, 0.1), transparent 65%);
 }
 
-.hero-glow-blue {
-  background:
-    radial-gradient(ellipse 60% 70% at 20% 45%, rgba(37, 99, 235, 0.18), transparent 70%),
-    radial-gradient(ellipse 45% 60% at 78% 55%, rgba(220, 11, 28, 0.1), transparent 65%);
+/* Smooth overrides for existing rojo utility classes */
+[data-theme="vice"] .bg-rojo,
+[data-theme="vice"] .hover\:bg-rojo:hover {
+  background-color: var(--accent) !important;
+}
+[data-theme="vice"] .hover\:bg-rojoVivo:hover {
+  background-color: var(--accent-hover) !important;
+}
+[data-theme="vice"] .text-rojo {
+  color: var(--accent) !important;
+}
+[data-theme="vice"] .text-rojoVivo {
+  color: var(--accent-hover) !important;
+}
+[data-theme="vice"] .border-rojo {
+  border-color: var(--accent) !important;
+}
+
+[data-theme="cyan"] .bg-rojo,
+[data-theme="cyan"] .hover\:bg-rojo:hover {
+  background-color: var(--accent) !important;
+}
+[data-theme="cyan"] .hover\:bg-rojoVivo:hover {
+  background-color: var(--accent-hover) !important;
+}
+[data-theme="cyan"] .text-rojo {
+  color: var(--accent) !important;
+}
+[data-theme="cyan"] .text-rojoVivo {
+  color: var(--accent-hover) !important;
+}
+[data-theme="cyan"] .border-rojo {
+  border-color: var(--accent) !important;
 }
 
 /* Scrollbar sutil */
@@ -136,7 +288,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #dc0b1c;
+  background: var(--accent);
 }
 
 /* Pulso botón WhatsApp flotante */

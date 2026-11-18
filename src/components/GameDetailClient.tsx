@@ -70,7 +70,7 @@ export default function GameDetailClient({
           {game.console}
         </Link>
         <span>/</span>
-        <span className="text-rojoVivo truncate max-w-xs sm:max-w-md">
+        <span className="text-[var(--accent)] truncate max-w-xs sm:max-w-md transition-colors">
           {game.name}
         </span>
       </nav>
@@ -90,7 +90,7 @@ export default function GameDetailClient({
               {game.console}
             </span>
             {game.isOffer ? (
-              <span className="absolute top-4 right-4 px-2.5 py-1 rounded bg-rojo text-white text-[10px] font-black uppercase tracking-wider shadow-md">
+              <span className="absolute top-4 right-4 px-2.5 py-1 rounded theme-badge text-white text-[10px] font-black uppercase tracking-wider shadow-md">
                 🔥 OFERTA
               </span>
             ) : game.isPreorder ? (
@@ -102,7 +102,7 @@ export default function GameDetailClient({
 
           <div className="grid grid-cols-3 gap-2.5 text-center">
             <div className="bg-panel2 border border-linea rounded-xl p-3">
-              <div className="text-[10px] font-black uppercase text-rojoVivo">
+              <div className="text-[10px] font-black uppercase text-[var(--accent)] transition-colors">
                 100% Original
               </div>
               <div className="text-[10px] text-muted mt-0.5">PS Store</div>
@@ -125,7 +125,7 @@ export default function GameDetailClient({
         {/* Right: Details & Purchase Box */}
         <div className="lg:col-span-7 space-y-6">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded border border-rojo/40 bg-rojo/10 text-[10px] font-extrabold uppercase tracking-widest text-rojoVivo">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded border border-[var(--accent)]/40 bg-[var(--accent-subtle)] text-[10px] font-extrabold uppercase tracking-widest text-[var(--accent)] transition-colors">
               {game.isOffer
                 ? '🔥 OFERTA POR TIEMPO LIMITADO'
                 : game.isPreorder
@@ -173,7 +173,7 @@ export default function GameDetailClient({
                     onClick={() => setSelectedIdx(idx)}
                     className={`p-4 rounded-xl border text-left transition ${
                       active
-                        ? 'bg-rojo/15 border-rojo shadow-lg shadow-rojo/15'
+                        ? 'bg-[var(--accent-subtle)] border-[var(--accent)] shadow-lg shadow-[var(--accent-glow)]'
                         : 'bg-panel2 border-linea hover:border-lineaFuerte'
                     }`}
                   >
@@ -183,7 +183,7 @@ export default function GameDetailClient({
                       </span>
                       <span
                         className={`text-[10px] font-extrabold uppercase ${
-                          isSec ? 'text-verdeVivo' : 'text-rojoVivo'
+                          isSec ? 'text-verdeVivo' : 'text-[var(--accent)]'
                         }`}
                       >
                         {isSec ? 'Más económica' : 'Recomendada'}
@@ -269,7 +269,7 @@ export default function GameDetailClient({
               <button
                 type="button"
                 onClick={() => addToCart(game, currentOpt)}
-                className="corte-btn flex-1 bg-rojo hover:bg-rojoVivo text-white py-4 px-6 text-xs sm:text-sm font-black uppercase tracking-wider shadow-lg shadow-rojo/30 transition active:scale-[0.98]"
+                className="corte-btn flex-1 theme-btn text-white py-4 px-6 text-xs sm:text-sm font-black uppercase tracking-wider shadow-lg shadow-[var(--accent-glow)] transition active:scale-[0.98]"
               >
                 + Agregar al Pedido
               </button>
@@ -301,7 +301,7 @@ export default function GameDetailClient({
               </button>
               <Link
                 href="/#catalogo"
-                className="text-xs font-extrabold uppercase tracking-wider text-rojoVivo hover:text-white transition"
+                className="text-xs font-extrabold uppercase tracking-wider text-[var(--accent)] hover:text-white transition"
               >
                 ← Volver al catálogo
               </Link>
@@ -319,7 +319,7 @@ export default function GameDetailClient({
             </h2>
             <Link
               href="/#catalogo"
-              className="text-xs font-extrabold uppercase tracking-wider text-rojoVivo hover:text-white transition"
+              className="text-xs font-extrabold uppercase tracking-wider text-[var(--accent)] hover:text-white transition"
             >
               Ver catálogo completo →
             </Link>

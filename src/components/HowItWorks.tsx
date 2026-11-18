@@ -11,9 +11,9 @@ export default function HowItWorks() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {/* Cuenta Primaria */}
-          <div className="bg-panel border border-linea rounded-xl p-6 hover:border-rojo/60 transition">
+          <div className="bg-panel border border-linea rounded-xl p-6 hover:border-[var(--accent)]/60 transition">
             <div className="flex items-center justify-between gap-2 mb-3 flex-wrap">
-              <span className="px-3 py-1 rounded bg-rojo/15 border border-rojo/40 text-rojoVivo text-xs font-black uppercase tracking-wider">
+              <span className="px-3 py-1 rounded bg-[var(--accent-subtle)] border border-[var(--accent)]/40 text-[var(--accent)] text-xs font-black uppercase tracking-wider transition-colors">
                 Cuenta Primaria
               </span>
               <span className="text-xs font-bold text-verdeVivo">
